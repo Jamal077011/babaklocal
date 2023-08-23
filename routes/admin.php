@@ -39,8 +39,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function(){
     // Admin User Routes
     Route:: resource('admin/admin-user','App\Http\Controllers\Backend\AdminUserController');
     // Menu Routes
-    Route:: post('admin/menu/updaterow', [MenuController::class, 'updaterow']);
-    Route:: resource('admin/menu', MenuController::class);
+    // Route:: post('admin/menu/updaterow', [MenuController::class, 'updaterow']);
+    // Route:: resource('admin/menu', MenuController::class);
     /* Profile Routes */
     Route:: get('admin/admin-profile','App\Http\Controllers\Backend\AdminProfileController@index')->name('profile');
     Route:: put('admin/admin-profile/update/{id}', 'App\Http\Controllers\Backend\AdminProfileController@update')->name('profile.update');
@@ -54,12 +54,12 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function(){
     });
 
     /* Setting Routes */
-    Route:: get('admin/settings', [SettingsController::class, 'index'])->name('settings.index');
-    // /* Webinfo Route */
-    Route:: post('admin/settings/webinfoupdate', [SettingsController::class, 'webinfoUpdate'])->name('settings.webinfoupdate');
-    // /* Webinfo Route */
-    Route:: post('admin/settings/contactinfo', [SettingsController::class, 'ContactInfoUpdate'])->name('settings.contactInfoUpdate');
-    Route:: post('admin/settings/imageupdate', [SettingsController::class, 'ImageUpdate'])->name('settings.imageUpdate');
+    // Route:: get('admin/settings', [SettingsController::class, 'index'])->name('settings.index');
+    // // /* Webinfo Route */
+    // Route:: post('admin/settings/webinfoupdate', [SettingsController::class, 'webinfoUpdate'])->name('settings.webinfoupdate');
+    // // /* Webinfo Route */
+    // Route:: post('admin/settings/contactinfo', [SettingsController::class, 'ContactInfoUpdate'])->name('settings.contactInfoUpdate');
+    // Route:: post('admin/settings/imageupdate', [SettingsController::class, 'ImageUpdate'])->name('settings.imageUpdate');
 
     /*  Another router  */
     

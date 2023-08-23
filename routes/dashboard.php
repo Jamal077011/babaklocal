@@ -30,22 +30,22 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function(){
      
     Route:: resource('dashboard/companies', 'App\Http\Controllers\Frontend\Dashboard\CompanyController');
 
-  Route::resource('dashboard/em', 'App\Http\Controllers\Frontend\Dashboard\Employees\EmployerController');    
+    Route::resource('dashboard/employee', 'App\Http\Controllers\Frontend\Dashboard\Employees\EmployerController');    
 
-    Route::get('dashboard/employee',function () {
-        return view('/frontend/dashboard/pages/employee/index');
-      })->name('dashboard.employee');
+    // Route::get('dashboard/employee',function () {
+    //     return view('/frontend/dashboard/pages/employee/index');
+    //   })->name('dashboard.employee');
     
-    Route::get('dashboard/employee/create',function () {
-      return view('/frontend/dashboard/pages/employee/create');
-    })->name('dashboard.employee.create');
+    // Route::get('dashboard/employee/create',function () {
+    //   return view('/frontend/dashboard/pages/employee/create');
+    // })->name('dashboard.employee.create');
 
-    Route::get('dashboard/employee/show',function () {
-      return view('/frontend/dashboard/pages/employee/show');
-    })->name('dashboard.employee.show');
-    Route::get('dashboard/employee/createfile',function () {
-      return view('/frontend/dashboard/pages/employee/createfile');
-    })->name('dashboard.employee.createfile');
+    // Route::get('dashboard/employee/show',function () {
+    //   return view('/frontend/dashboard/pages/employee/show');
+    // })->name('dashboard.employee.show');
+    // Route::get('dashboard/employee/createfile',function () {
+    //   return view('/frontend/dashboard/pages/employee/createfile');
+    // })->name('dashboard.employee.createfile');
     
     Route::get('dashboard/company',function(){
       return view('/frontend/dashboard/pages/company/show');

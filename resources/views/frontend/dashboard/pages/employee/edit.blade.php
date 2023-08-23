@@ -1,5 +1,5 @@
 @extends('frontend.dashboard.layouts.master')
-@section('title', 'Create employee')
+@section('title', 'edit employee')
 
 @section('content')
 <div class="header bg-primary pb-6"></div>
@@ -8,7 +8,7 @@
 <div class="card-header">
     <div class="row align-items-center">
     <div class="col-8">
-        <h3 class="mb-0">{{__('Dashboard.Create Employee')}}</h3>
+        <h3 class="mb-0">Edit Employee</h3>
     </div>
     <div class="col-4 text-right">
         <a href="{{ route('employee.index') }}" class="btn btn-sm btn-primary"><i class="fas fa-arrow-left"></i>{{__('Dashboard.Go back')}} </a>
@@ -16,12 +16,15 @@
     </div>
 </div>
 <div class="card-body">
-    <form action="{{ route('employee.store')}}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('employee.update', $employer)}}" method="post" enctype="multipart/form-data">
+
     @csrf
+    @method('PUT')
+
         <div class="">
         <div class="form-group ">
             <label for="exampleFormControlInput1">English Name</label>
-            <input name="en_name" type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+            <input name="en_name" type="text" class="form-control" id="exampleFormControlInput1" value="{{$employer->en_name}}">
             @error('en_name')
                 <small class="text-danger">{{ $message }}</small>
             @enderror
@@ -31,7 +34,7 @@
         <div class="">
             <div class="form-group ">
                 <label for="exampleFormControlInput1">Arabic Name</label>
-                <input name="ar_name" type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+                <input name="ar_name" type="text" class="form-control" id="exampleFormControlInput1" value="{{$employer->ar_name}}">
                 @error('ar_name')
                     <small class="text-danger">{{ $message }}</small>
                 @enderror
@@ -40,7 +43,7 @@
         <div class=" ">
         <div class="form-group ">
             <label for="exampleFormControlInput1">{{__('Dashboard.Email')}}</label>
-            <input name="email" type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+            <input name="email" type="text" class="form-control" id="exampleFormControlInput1" value="{{$employer->email}}">
             @error('email')
                 <small class="text-danger">{{ $message }}</small>
             @enderror
@@ -49,7 +52,7 @@
         <div class=" ">
         <div class="form-group ">
             <label for="exampleFormControlInput1">{{__('Dashboard.Phone Number')}}</label>
-            <input name="phone" type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+            <input name="phone" type="text" class="form-control" id="exampleFormControlInput1" value="{{$employer->phone}}">
             @error('phone')
             <small class="text-danger">{{ $message }}</small>
             @enderror
@@ -58,7 +61,7 @@
         <div class=" ">
             <div class="form-group ">
                 <label for="exampleFormControlInput1">Company</label>
-                <input name="company_id" type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+                <input name="company_id" type="text" class="form-control" id="exampleFormControlInput1" value="{{$employer->company_id}}">
                 @error('company_id')
                 <small class="text-danger">{{ $message }}</small>
                 @enderror <br>
@@ -67,7 +70,7 @@
             <div class=" ">
                 <div class="form-group ">
                     <label for="exampleFormControlInput1">Gender</label>
-                    <input name="gender" type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+                    <input name="gender" type="text" class="form-control" id="exampleFormControlInput1" value="{{$employer->gender}}">
                     @error('gender')
                     <small class="text-danger">{{ $message }}</small>
                     @enderror <br>
@@ -76,7 +79,7 @@
                 <div class=" ">
                     <div class="form-group ">
                         <label for="exampleFormControlInput1">Nationality</label>
-                        <input name="nationality_id" type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+                        <input name="nationality_id" type="text" class="form-control" id="exampleFormControlInput1" value="{{$employer->nationality_id}}">
                         @error('nationality_id')
                         <small class="text-danger">{{ $message }}</small>
                         @enderror <br>
@@ -85,7 +88,7 @@
         <div class=" ">
         <div class="form-group ">
             <label for="exampleFormControlInput1">{{__('Dashboard.Job')}}</label>
-            <input name="job_title_id" type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+            <input name="job_title_id" type="text" class="form-control" id="exampleFormControlInput1" value="{{$employer->job_title_id}}">
             @error('job_title_id')
             <small class="text-danger">{{ $message }}</small>
             @enderror <br>

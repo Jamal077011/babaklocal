@@ -58,7 +58,7 @@
                 </ul> --}}
               {{-- @else --}}
                 {{-- @if (auth('admin')->user()->hasAnyPermission(json_decode($parentItem->permissions)) or auth('admin')->user()->hasRole('super-admin')) --}}
-                <a class="nav-link " href="{{ route('dashboard.employee') }}" role="button">
+                <a class="nav-link " href="{{ route('employee.index') }}" role="button">
                   <i class="fas fa-user-tie"></i>
                   <span class="nav-link-text">{{__('Dashboard.Employee')}}</span>
                 </a>

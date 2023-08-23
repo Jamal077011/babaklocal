@@ -11,13 +11,13 @@ class EmployerController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index() 
     {
         $employees = Employer::all();
 
         $employees = Employer::with('user')->where('user_id', auth()->user()->id)->orderBy('created_at', 'desc')->paginate(5);
 
-        // return view('frontend.dashboard.pages.employee.index', compact('employees'));
+        return view('frontend.dashboard.pages.employee.index', compact('employees'));
 
        
   
@@ -28,7 +28,7 @@ class EmployerController extends Controller
      */
     public function create()
     {
-        //return view('frontend.dashboard.pages.create');
+        return view('frontend.dashboard.pages.employee.create');
     }
 
     /**
@@ -36,9 +36,10 @@ class EmployerController extends Controller
      */
     public function store(Request $request)
     {
-         $emloyer = Employer::create($request->all());
+        // $user_id = auth()->user()->id;     
+        $employer = Employer::create($request->all());
 
-        // return redirect()->route('companies.index')->with('success', 'Company created successfully.');
+        return redirect()->route('employee.index')->with('success', 'Employee created successfully.');
     }
 
     /**
@@ -46,10 +47,10 @@ class EmployerController extends Controller
      */
     public function show(string $id)
     {
-        $emloyer = Employer::findOrFail($id);
+        $employer = Employer::findOrFail($id);
       //  $data = json_decode($company->company_data, true);
         //$files = CompanyFile::where('company_id', $id)->orderBy('created_at', 'desc')->get();
-        // return view('frontend.dashboard.pages.company.show', compact('company', 'data', 'files'));
+        return view('frontend.dashboard.pages.employee.show', compact('employer'));
     }
 
     /**
@@ -59,7 +60,7 @@ class EmployerController extends Controller
     {
         $employer = Employer::findOrFail($id);
 
-        // return view('backend.pages.company.edit', compact('company'));
+        return view('frontend.dashboard.pages.employee.edit', compact('employer'));
     }
 
     /**
@@ -70,7 +71,7 @@ class EmployerController extends Controller
         $employer = Employer::findOrFail($id);
         $employer->update($request->all());
 
-        // return redirect()->route('companies.index')->with('success', 'Company updated successfully.');
+        return redirect()->route('employee.index')->with('success', 'employee updated successfully.');
     }
 
     /**
@@ -81,6 +82,6 @@ class EmployerController extends Controller
         $employer = Employer::findOrFail($id);
         $employer->delete();
 
-        // return redirect()->route('companies.index')->with('success', 'Company deleted successfully.');
+        return redirect()->route('employee.index')->with('success', 'Company deleted successfully.');
     }
 }
