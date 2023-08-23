@@ -1,5 +1,6 @@
 <?php
 use Illuminate\Support\Facades\Route;
+
 // Dashboard
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 // Route::group(['prefix' => LaravelLocalization::setLocale()], function(){
@@ -26,7 +27,11 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function(){
     // Confirm Password
     Route::get('dashboard/password/confirm', 'App\Http\Controllers\Frontend\Dashboard\Auth\ConfirmPasswordController@showConfirmForm')->name('dashboard.password.confirm');
     Route::post('dashboard/password/confirm', 'App\Http\Controllers\Frontend\Dashboard\Auth\ConfirmPasswordController@confirm');
-    
+     
+    Route:: resource('dashboard/companies', 'App\Http\Controllers\Frontend\Dashboard\CompanyController');
+
+  Route::resource('dashboard/em', 'App\Http\Controllers\Frontend\Dashboard\Employees\EmployerController');    
+
     Route::get('dashboard/employee',function () {
         return view('/frontend/dashboard/pages/employee/index');
       })->name('dashboard.employee');

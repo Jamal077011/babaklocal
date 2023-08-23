@@ -7,6 +7,7 @@ use App\Http\Controllers\Backend\RoleController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\SettingsController;
 
+
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use RealRashid\SweetAlert\Facades\Alert;
 

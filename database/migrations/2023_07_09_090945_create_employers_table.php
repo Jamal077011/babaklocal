@@ -17,8 +17,11 @@ return new class extends Migration
             $table->string('en_name');
             $table->string('email');
             $table->string('phone');
-            $table->string('gender');       
-
+            $table->string('gender');  
+            $table->unsignedBigInteger('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->integer('company_id')->unsigned();
+            $table->foreign('company_id')->references('id')->on('companies')->onDelete('cascade');     
             $table->integer('job_title_id')->unsigned();
 
 
