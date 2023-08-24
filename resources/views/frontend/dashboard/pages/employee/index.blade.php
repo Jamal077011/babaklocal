@@ -66,8 +66,8 @@
                                 <td>{{ $employee->en_name }}</td>
                                 <td>{{ $employee->email}}</td>
                                 <td>{{ $employee->phone }}</td>
-                                <td>{{ $employee->company_id }}</td>
-                                <td>{{ $employee->job_title_id}}</td>
+                                <td>{{ $employee->company->name }}</td>
+                                <td>{{ $employee->jobTitle->name}}</td>
                                 <td>{{ $employee->created_at }}</td>
                                 <td>
                                     <div class="btn-group" role="group">

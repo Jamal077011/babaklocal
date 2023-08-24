@@ -20,11 +20,15 @@ return new class extends Migration
               ->onUpdate('cascade')
               ->onDelete('cascade');
           
+            
+          $table->string('name');
 
           $table->string('filename');
 
           $table->date('start_date');
           $table->date('end_date');
+          $table->softDeletes();
+
           $table->timestamps();
         });
     }

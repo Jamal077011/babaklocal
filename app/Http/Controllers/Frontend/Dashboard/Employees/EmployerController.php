@@ -3,7 +3,11 @@
 namespace App\Http\Controllers\Frontend\Dashboard\Employees;
 
 use App\Http\Controllers\Controller;
+use App\Models\Dashboard\Company;
 use App\Models\Dashboard\Employer;
+use App\Models\Dashboard\EmployerFile;
+use App\Models\Dashboard\jobTitle;
+use App\Models\Dashboard\Nationality;
 use Illuminate\Http\Request;
 
 class EmployerController extends Controller
@@ -14,10 +18,12 @@ class EmployerController extends Controller
     public function index() 
     {
         $employees = Employer::all();
+        $compaines = Company::orderBy('id')->get();
+        $job_titles = jobTitle::all();
 
         $employees = Employer::with('user')->where('user_id', auth()->user()->id)->orderBy('created_at', 'desc')->paginate(5);
-
-        return view('frontend.dashboard.pages.employee.index', compact('employees'));
+        
+        return view('frontend.dashboard.pages.employee.index', compact('employees', 'compaines', 'job_titles'));
 
        
   
@@ -28,7 +34,10 @@ class EmployerController extends Controller
      */
     public function create()
     {
-        return view('frontend.dashboard.pages.employee.create');
+        $compaines = Company::where('user_id', auth()->user()->id)->orderBy('id')->get();
+        $nationalities = Nationality::all();
+        $job_titles = jobTitle::all();
+        return view('frontend.dashboard.pages.employee.create', compact('compaines', 'nationalities', 'job_titles'));
     }
 
     /**
@@ -36,7 +45,8 @@ class EmployerController extends Controller
      */
     public function store(Request $request)
     {
-        // $user_id = auth()->user()->id;     
+        // $user_id = auth()->user()->id;
+        
         $employer = Employer::create($request->all());
 
         return redirect()->route('employee.index')->with('success', 'Employee created successfully.');
@@ -50,7 +60,9 @@ class EmployerController extends Controller
         $employer = Employer::findOrFail($id);
       //  $data = json_decode($company->company_data, true);
         //$files = CompanyFile::where('company_id', $id)->orderBy('created_at', 'desc')->get();
-        return view('frontend.dashboard.pages.employee.show', compact('employer'));
+        $files = EmployerFile::where('employer_id', $id)->orderBy('created_at', 'desc')->get();
+
+        return view('frontend.dashboard.pages.employee.show', compact('employer', 'files'));
     }
 
     /**

@@ -119,4 +119,17 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function(){
 
     Route:: post('dashboard/companies/companyFile/{id?}', 'App\Http\Controllers\Frontend\Dashboard\CompanyFileController@destroy')->name('companyfile.destroy');
 
+
+
+    Route:: get('dashboard/employee/{id?}/employeeFile/fileForm', 'App\Http\Controllers\Frontend\Dashboard\Employees\EmployerFileController@FileForm')->name('employerfile');
+    Route:: post('dashboard/employee/{id?}/employeeFile/addEmployerFile', 'App\Http\Controllers\Frontend\Dashboard\Employees\EmployerFileController@addEmployerFile')->name('employerfile.addEmployerFile');
+    
+    Route:: get('dashboard/employee/employeeFile/{id?}', 'App\Http\Controllers\Frontend\Dashboard\Employees\EmployerFileController@show')->name('employerfile.show');
+    
+    Route:: get('dashboard/employee/employeeFile/renew/{id?}', 'App\Http\Controllers\Frontend\Dashboard\Employees\EmployerFileController@renew')->name('employerfile.renew');
+    
+    Route:: get('dashboard/employee/employeeFile/edit/{id?}', 'App\Http\Controllers\Frontend\Dashboard\Employees\EmployerFileController@edit')->name('employerfile.edit');
+    Route:: put('dashboard/employee/employeeFile/update/{id?}', 'App\Http\Controllers\Frontend\Dashboard\Employees\EmployerFileController@update')->name('employerfile.update');
+
+    Route:: post('dashboard/employee/employeeFile/{id?}', 'App\Http\Controllers\Frontend\Dashboard\Employees\EmployerFileController@destroy')->name('employerfile.destroy');
   });

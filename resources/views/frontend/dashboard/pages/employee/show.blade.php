@@ -25,7 +25,7 @@
             </div>
             <div class="col-md-4">
                 <span>{{__('Dashboard.Job')}}</span>
-                <h3>{{ $employer->job_title_id }}</h3>
+                <h3>{{ $employer->jobTitle->name }}</h3>
             </div>
         </div>
         <div class="row mt-3">
@@ -39,7 +39,7 @@
             </div>
             <div class="col-md-4">
                 <span>{{__('Dashboard.Nationallity')}}</span>
-                <h3>{{ $employer->nationality_id }}</h3>
+                <h3>{{ $employer->nationality->name }}</h3>
             </div>
         </div>
     </div>
@@ -51,9 +51,8 @@
                 </h1>
             </div>
             <div class="col-md-6 text-right">
-                {{-- <a href="{{ route('dashboard.employee.createfile')}}" class="btn btn-success"><b><i class="fas fa-plus"></i>{{__('Dashboard.Add New File')}}</b></a> --}}
-                {{-- <a href="{{ route('dashboard.employee.sponsored-create')}}" class="btn btn-success"><b><i class="fas fa-plus"></i>{{__('Dashboard.Add new Sponsored')}}</b></a> --}}
-            </div>
+                <a href="{{ route('employerfile',$employer->id) }}" class="btn btn-sm btn-success "><i class="fas fa-plus"></i>{{__('Dashboard.Add New File')}}</a>
+              </div>
         </div>
         <div class="row mt-5">
             <div class="table-responsive pb-6">
@@ -68,42 +67,30 @@
                         </tr>
                     </thead>
                     <tbody class="list">
+                        @foreach ($files as $file)
                         <tr>
-                            <td></td>
-                            <td class="budget">+2015215408</td>
-                            <td>accontant</td>
-                            <td>20/10/1100</td>
-                            <td class="table-actions">
-                                <div class="btn-group" role="group">
-                                    <button id="btnGroupDrop1" class="btn btn-sm btn-outline-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{__('Dashboard.Action')}} </button>
-                                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                                        {{-- <a href="{{route('dashboard.employee.show')}}" class="dropdown-item"><i class="fa-solid fa-eye fa-lg"></i>Review</a> --}}
-                                        {{-- <a href="{{route('dashboard.employee.sponsored-index')}}" class="dropdown-item"><i class="fa-solid fa-eye fa-lg"></i>View Sponserd</a> --}}
-                                        <button class="dropdown-item"><i class="fa-solid fa-arrows-rotate fa-lg"></i>Renew</button>
-                                        <button class="dropdown-item"><i class="fa-solid fa-pen fa-lg"></i>Edit</button>
-                                        <button class="dropdown-item"><i class="fa-solid fa-trash fa-lg"></i>Delete</button>
-                                    </div>
+                          <td><i class="fa-solid fa-file-pdf fa-lg"></i></td>
+                          <td>{{ $file->name }}</td>
+                          <td>{{ $file->start_date }}</td>
+                          <td>{{ $file->end_date }}</td>
+                          <td>
+                              <div class="btn-group" role="group">
+                                <button id="btnGroupDrop1" class="btn btn-sm btn-outline-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{__('Dashboard.Action')}}</button>
+                                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                                  <a href="{{ route('employerfile.show', $file->id) }}" class="dropdown-item "><i class="fa-solid fa-eye fa-lg p-2"></i>{{__('Dashboard.Review')}}</a>
+                                  <a href="{{ route('employerfile.renew', $file->id) }}" class="dropdown-item"><i class="fa-solid fa-arrows-rotate fa-lg p-2"></i>{{__('Dashboard.Renew')}}</a>
+                                  <a href="{{ route('employerfile.edit', $file->id) }}" class="dropdown-item"><i class="fa-solid fa-pen fa-lg p-2"></i>{{__('Dashboard.Edit')}}</a>
+                                  <form action="{{ route('employerfile.destroy',$file->id) }}" method="POST">
+                                  @csrf
+                                  @method('post')
+                                  <button class="dropdown-item"><i class="fa-solid fa-trash fa-lg p-2"></i>{{__('Dashboard.Delete')}}</button>
+                                  </form>
+              
                                 </div>
-                            </td>
-                        </tr> 
-                        <tr>
-                            <td></td>
-                            <td>jaime077011@gmail.com</td>
-                            <td class="budget">+201201218354</td>
-                            <td>20/10/2023</td>
-                            <td class="table-actions">
-                                <div class="btn-group" role="group">
-                                    <button id="btnGroupDrop1" class="btn btn-sm btn-outline-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{__('Dashboard.Action')}}</button>
-                                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                                        {{-- <a href="{{route('dashboard.employee.show')}}" class="dropdown-item"><i class="fa-solid fa-eye fa-lg"></i>Review</a> --}}
-                                        {{-- <a href="{{route('dashboard.employee.sponsored-index')}}" class="dropdown-item"><i class="fa-solid fa-eye fa-lg"></i>View Sponserd</a> --}}
-                                        <button class="dropdown-item"><i class="fa-solid fa-arrows-rotate fa-lg"></i>Renew</button>
-                                        <button class="dropdown-item"><i class="fa-solid fa-pen fa-lg"></i>Edit</button>
-                                        <button class="dropdown-item"><i class="fa-solid fa-trash fa-lg"></i>Delete</button>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr> 
+                              </div>
+                          </td>
+                        </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
