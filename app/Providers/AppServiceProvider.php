@@ -5,6 +5,9 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use DB;
 use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Facades\Schema;
+
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -30,6 +33,8 @@ class AppServiceProvider extends ServiceProvider
         if(request()->is('backup')){
             return abort(404);
         }
+        Schema::defaultStringLength(125);
+
         Paginator::useBootstrap();
     }
 }
