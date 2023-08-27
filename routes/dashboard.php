@@ -28,9 +28,10 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function(){
     Route::get('dashboard/password/confirm', 'App\Http\Controllers\Frontend\Dashboard\Auth\ConfirmPasswordController@showConfirmForm')->name('dashboard.password.confirm');
     Route::post('dashboard/password/confirm', 'App\Http\Controllers\Frontend\Dashboard\Auth\ConfirmPasswordController@confirm');
      
-    Route:: resource('dashboard/companies', 'App\Http\Controllers\Frontend\Dashboard\CompanyController');
 
-    Route::resource('dashboard/employee', 'App\Http\Controllers\Frontend\Dashboard\Employees\EmployerController');    
+    Route::resource('dashboard/employee', 'App\Http\Controllers\Frontend\Dashboard\Employees\EmployerController');   
+    Route::resource('dashboard/sponsore', 'App\Http\Controllers\Frontend\Dashboard\Sponsore\SponsoreController');    
+ 
 
     // Route::get('dashboard/employee',function () {
     //     return view('/frontend/dashboard/pages/employee/index');
@@ -95,12 +96,12 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function(){
       return view('/frontend/dashboard/pages/reports/sponserd-reports');
     })->name('dashboard.reports.sponserd_reports');
 
-    Route::get('dashboard/employee/sponsored-index',function(){
-      return view('/frontend/dashboard/pages/employee/sponsored-index');
-    })->name('dashboard.employee.sponsored-index');
-    Route::get('dashboard/employee/sponsored-create',function(){
-      return view('/frontend/dashboard/pages/employee/sponsored-create');
-    })->name('dashboard.employee.sponsored-create');
+    // Route::get('dashboard/employee/sponsored-index',function(){
+    //   return view('/frontend/dashboard/pages/employee/sponsored-index');
+    // })->name('dashboard.employee.sponsored-index');
+    // Route::get('dashboard/employee/sponsored-create',function(){
+    //   return view('/frontend/dashboard/pages/employee/sponsored-create');
+    // })->name('dashboard.employee.sponsored-create');
     // Verify Email
     // Route::get('email/verify', 'Auth\VerificationController@show')->name('verification.notice');
     // Route::get('email/verify/{id}/{hash}', 'Auth\VerificationController@verify')->name('verification.verify');

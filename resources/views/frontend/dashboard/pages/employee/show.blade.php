@@ -39,7 +39,7 @@
             </div>
             <div class="col-md-4">
                 <span>{{__('Dashboard.Nationallity')}}</span>
-                <h3>{{ $employer->nationality->name }}</h3>
+                <h3>{{ $employer->nationality->name  }}</h3>
             </div>
         </div>
     </div>

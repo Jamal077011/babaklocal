@@ -13,7 +13,19 @@
                     <div class="row">
                         <div class="col-6"><h3 class="">{{__('Dashboard.Employees')}}</h3>
                             <a href="{{ route('employee.create')}}" class="btn btn-success"><b><i class="fas fa-plus"></i> {{__('Dashboard.Add New Employee')}}</b></a>
+                            <li class="nav-item dropdown">
+                                <button class="btn " href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: #fff"><span>Company</span><i class="fa-sharp fa-solid fa-arrow-down"></i></button>
+                                <div class="dropdown-menu dropdown-menu-m  dropdown-menu-right  py-0 overflow-hidden">
+                                @foreach ($companies as $company)
+                                  <div class="px-3 py-3">
+                                    <a href="{{route('employee.index', ['company' => $company->id])}}" class="text text-muted m-0">{{$company->name}}</a>
+                                  </div>
+                                @endforeach
+                      
+                                </div>
+                              </li>
                         </div>
+                        
                         <div class="col-6 ">
                             <form>
                                 <div class="row">
@@ -74,6 +86,7 @@
                                         <button id="btnGroupDrop1" class="btn btn-sm btn-outline-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{__('Dashboard.Action')}}</button>
                                         <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
                                           <a href="{{ route('employee.show', $employee->id) }}" class="dropdown-item "><i class="fa-solid fa-eye fa-lg p-2"></i>{{__('Dashboard.Review')}}</a>
+                                          <a href="{{ route('sponsore.show', $employee->id) }}" class="dropdown-item "><i class="fa-solid fa-eye fa-lg p-2"></i>Review Sponsored</a>
                                           <a href="{{ route('employee.edit', $employee->id) }}" class="dropdown-item"><i class="fa-solid fa-pen fa-lg p-2"></i>{{__('Dashboard.Edit')}}</a>
                                           <form action="{{ route('employee.destroy', $employee->id) }}" method="POST">
                                           @csrf

@@ -2,7 +2,6 @@
 @section('title', 'Sponsored')
 
 @section('content')
-{{-- @livewire('backend.access-control.admin-user-table') --}}
 <div class="header bg-primary pb-6"></div>
 <div class="container-fluid mt--6">
     <div class="row">
@@ -12,7 +11,7 @@
                 <div class="card-header border-0">
                     <div class="row">
                         <div class="col-6"><h3 class="">{{__('Dashboard.Sponsored')}}</h3>
-                            <a href="{{ route('dashboard.employee.sponsored-create')}}" class="btn btn-success"><b><i class="fas fa-plus"></i>{{__('Dashboard.Add new Sponsored')}}</b></a>
+                            <a href="" class="btn btn-success"><b><i class="fas fa-plus"></i>{{__('Dashboard.Add new Sponsored')}}</b></a>
                         </div>
                         <div class="col-6 ">
                             <form>

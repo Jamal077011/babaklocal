@@ -71,12 +71,12 @@
                 <span class="nav-link-text">{{__('Dashboard.Action Requests')}}</span>
               </a>
             </li>
-            <li class="nav-item">
+            {{-- <li class="nav-item">
               <a class="nav-link " href="{{ route('dashboard.reports') }}" role="button">
                 <i class="fa fa-file"></i>
                 <span class="nav-link-text">{{__('Dashboard.Reports')}}</span>
               </a>
-            </li>
+            </li> --}}
             {{-- @endforeach --}}
 
           

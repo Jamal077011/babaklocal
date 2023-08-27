@@ -15,7 +15,7 @@
             <span aria-hidden="true">×</span>
           </button>
         </form>
-        <li class="nav-item dropdown">
+        {{-- <li class="nav-item dropdown">
           <button class="btn " href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: #fff"><span>Company</span><i class="fa-sharp fa-solid fa-arrow-down"></i></button>
           <div class="dropdown-menu dropdown-menu-m  dropdown-menu-right  py-0 overflow-hidden">
             <div class="px-3 py-3">
@@ -32,7 +32,7 @@
             </div>
 
           </div>
-        </li>
+        </li> --}}
         <li class=" dropdown">
           <a class="btn " style="background-color: #fff" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fa-solid fa-globe fa-xl" style="color: #007bff;"></i>

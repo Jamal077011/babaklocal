@@ -15,15 +15,15 @@ class EmployerController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index() 
+    public function index(Request $request) 
     {
-        $employees = Employer::all();
-        $compaines = Company::orderBy('id')->get();
+        $companies = Company::where('user_id', auth()->user()->id)->orderBy('id')->get();
         $job_titles = jobTitle::all();
-
         $employees = Employer::with('user')->where('user_id', auth()->user()->id)->orderBy('created_at', 'desc')->paginate(5);
-        
-        return view('frontend.dashboard.pages.employee.index', compact('employees', 'compaines', 'job_titles'));
+        if($request->company){
+            $employees = Employer::where('company_id', $request->company)->orderBy('created_at', 'desc')->paginate(5);
+        }
+        return view('frontend.dashboard.pages.employee.index', compact('employees', 'companies', 'job_titles'));
 
        
   
