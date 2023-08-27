@@ -648,6 +648,8 @@ class ComposerStaticInit758f175a9cb981b0bb7d677601ff888c
         'App\\Http\\Controllers\\Frontend\\Dashboard\\Auth\\VerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Frontend/Dashboard/Auth/VerificationController.php',
         'App\\Http\\Controllers\\Frontend\\Dashboard\\CompanyController' => __DIR__ . '/../..' . '/app/Http/Controllers/Frontend/Dashboard/CompanyController.php',
         'App\\Http\\Controllers\\Frontend\\Dashboard\\CompanyFileController' => __DIR__ . '/../..' . '/app/Http/Controllers/Frontend/Dashboard/CompanyFileController.php',
+        'App\\Http\\Controllers\\Frontend\\Dashboard\\Employees\\EmployerController' => __DIR__ . '/../..' . '/app/Http/Controllers/Frontend/Dashboard/Employees/EmployerController.php',
+        'App\\Http\\Controllers\\Frontend\\Dashboard\\Employees\\EmployerFileController' => __DIR__ . '/../..' . '/app/Http/Controllers/Frontend/Dashboard/Employees/EmployerFileController.php',
         'App\\Http\\Controllers\\Frontend\\Dashboard\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/Frontend/Dashboard/HomeController.php',
         'App\\Http\\Controllers\\Frontend\\MenuController' => __DIR__ . '/../..' . '/app/Http/Controllers/Frontend/MenuController.php',
         'App\\Http\\Controllers\\Frontend\\RoleController' => __DIR__ . '/../..' . '/app/Http/Controllers/Frontend/RoleController.php',

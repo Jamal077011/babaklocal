@@ -36,6 +36,8 @@ return array(
     'App\\Http\\Controllers\\Frontend\\Dashboard\\Auth\\VerificationController' => $baseDir . '/app/Http/Controllers/Frontend/Dashboard/Auth/VerificationController.php',
     'App\\Http\\Controllers\\Frontend\\Dashboard\\CompanyController' => $baseDir . '/app/Http/Controllers/Frontend/Dashboard/CompanyController.php',
     'App\\Http\\Controllers\\Frontend\\Dashboard\\CompanyFileController' => $baseDir . '/app/Http/Controllers/Frontend/Dashboard/CompanyFileController.php',
+    'App\\Http\\Controllers\\Frontend\\Dashboard\\Employees\\EmployerController' => $baseDir . '/app/Http/Controllers/Frontend/Dashboard/Employees/EmployerController.php',
+    'App\\Http\\Controllers\\Frontend\\Dashboard\\Employees\\EmployerFileController' => $baseDir . '/app/Http/Controllers/Frontend/Dashboard/Employees/EmployerFileController.php',
     'App\\Http\\Controllers\\Frontend\\Dashboard\\HomeController' => $baseDir . '/app/Http/Controllers/Frontend/Dashboard/HomeController.php',
     'App\\Http\\Controllers\\Frontend\\MenuController' => $baseDir . '/app/Http/Controllers/Frontend/MenuController.php',
     'App\\Http\\Controllers\\Frontend\\RoleController' => $baseDir . '/app/Http/Controllers/Frontend/RoleController.php',
