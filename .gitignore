@@ -1,2 +1,2 @@
-# ignore .env
-.env
+# add .env file to .gitignore
+echo ".env" >> .gitignore
