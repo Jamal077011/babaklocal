@@ -33,7 +33,7 @@ class AppServiceProvider extends ServiceProvider
         if(request()->is('backup')){
             return abort(404);
         }
-        Schema::defaultStringLength(125);
+        Schema::defaultStringLength(225);
 
         Paginator::useBootstrap();
     }
