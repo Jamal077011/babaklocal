@@ -11,7 +11,7 @@
                 <div class="card-header border-0">
                     <div class="row">
                         <div class="col-6"><h3 class="">{{__('Dashboard.Sponsored')}}</h3>
-                            <a href="" class="btn btn-success"><b><i class="fas fa-plus"></i>{{__('Dashboard.Add new Sponsored')}}</b></a>
+                            <a href="{{route('sponsore.create')}}" class="btn btn-success"><b><i class="fas fa-plus"></i>{{__('Dashboard.Add new Sponsored')}}</b></a>
                         </div>
                         <div class="col-6 ">
                             <form>
@@ -59,44 +59,32 @@
                             </tr>
                         </thead>
                         <tbody class="list">
+                            @foreach ($sponsored as $sponsore)
+
                             <tr>
-                                <td class="budget">user</td> 
-                                <td>user@gmail.com</td>
-                                <td class="budget">+201521540890</td>
-                                <td>accontant</td>
-                                <td>09/08/2000</td>
-                                <td>09/08/200</td>
-                                <td class="table-actions">
-                                    <div class="btn-group" role="group">
-                                        <button id="btnGroupDrop1" class="btn btn-sm btn-outline-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action</button>
+                                    <td>{{ $sponsore->en_name }}</td>
+                                    <td>{{ $sponsore->email}}</td>
+                                    <td>{{ $sponsore->phone }}</td>
+                                    <td>{{ $sponsore->jobTitle->name}}</td>
+                                    <td>{{ $sponsore->relative_relation }}</td>
+                                    <td>{{ $sponsore->created_at }}</td>
+                                    <td>                                    
+                                        <div class="btn-group" role="group">
+                                        <button id="btnGroupDrop1" class="btn btn-sm btn-outline-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{__('Dashboard.Action')}}</button>
                                         <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                                            <button class="dropdown-item"><i class="fa-solid fa-eye fa-lg"></i>Review</button>
-                                            <button class="dropdown-item"><i class="fa-solid fa-arrows-rotate fa-lg"></i>Renew</button>
-                                            <button class="dropdown-item"><i class="fa-solid fa-pen fa-lg"></i>Edit</button>
-                                            <button class="dropdown-item"><i class="fa-solid fa-trash fa-lg"></i>Delete</button>
+                                          <a href="{{ route('sponsore.show', $sponsore->id) }}" class="dropdown-item "><i class="fa-solid fa-eye fa-lg p-2"></i>{{__('Dashboard.Review')}}</a>
+                                          <a href="{{ route('sponsore.edit', $sponsore->id) }}" class="dropdown-item"><i class="fa-solid fa-pen fa-lg p-2"></i>{{__('Dashboard.Edit')}}</a>
+                                          <form action="{{ route('sponsore.destroy', $sponsore->id) }}" method="POST">
+                                          @csrf
+                                          @method('delete')
+                                          <button class="dropdown-item"><i class="fa-solid fa-trash fa-lg p-2"></i>{{__('Dashboard.Delete')}}</button>
+                                          </form>
+                      
                                         </div>
-                                    </div>
-                                </td>
+                                      </div>
+                                    </td>
                             </tr> 
-                            <tr>
-                                <td class="budget">jaime</td> 
-                                <td>jaime077011@gmail.com</td>
-                                <td class="budget">+201201218354</td>
-                                <td>Web dev            </td>
-                                <td>20/10/2023            </td>
-                                <td>09/08/2000</td>
-                                <td class="table-actions">
-                                    <div class="btn-group" role="group">
-                                        <button id="btnGroupDrop1" class="btn btn-sm btn-outline-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action</button>
-                                        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                                            <button class="dropdown-item"><i class="fa-solid fa-eye fa-lg"></i>Review</button>
-                                            <button class="dropdown-item"><i class="fa-solid fa-arrows-rotate fa-lg"></i>Renew</button>
-                                            <button class="dropdown-item"><i class="fa-solid fa-pen fa-lg"></i>Edit</button>
-                                            <button class="dropdown-item"><i class="fa-solid fa-trash fa-lg"></i>Delete</button>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr> 
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

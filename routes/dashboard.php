@@ -31,7 +31,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function(){
 
     Route::resource('dashboard/employee', 'App\Http\Controllers\Frontend\Dashboard\Employees\EmployerController');   
     Route::resource('dashboard/sponsore', 'App\Http\Controllers\Frontend\Dashboard\Sponsore\SponsoreController');    
- 
+    Route::get('dashboard/sponsore/single/{id?}', 'App\Http\Controllers\Frontend\Dashboard\Sponsore\SponsoreController@show_single')->name('sponsore.show_single');
+
 
     // Route::get('dashboard/employee',function () {
     //     return view('/frontend/dashboard/pages/employee/index');

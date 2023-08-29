@@ -86,7 +86,7 @@
                                         <button id="btnGroupDrop1" class="btn btn-sm btn-outline-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{__('Dashboard.Action')}}</button>
                                         <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
                                           <a href="{{ route('employee.show', $employee->id) }}" class="dropdown-item "><i class="fa-solid fa-eye fa-lg p-2"></i>{{__('Dashboard.Review')}}</a>
-                                          <a href="{{ route('sponsore.show', $employee->id) }}" class="dropdown-item "><i class="fa-solid fa-eye fa-lg p-2"></i>Review Sponsored</a>
+                                          <a href="{{ route('sponsore.show_single', $employee->id) }}" class="dropdown-item "><i class="fa-solid fa-eye fa-lg p-2"></i>Review Sponsored</a>
                                           <a href="{{ route('employee.edit', $employee->id) }}" class="dropdown-item"><i class="fa-solid fa-pen fa-lg p-2"></i>{{__('Dashboard.Edit')}}</a>
                                           <form action="{{ route('employee.destroy', $employee->id) }}" method="POST">
                                           @csrf

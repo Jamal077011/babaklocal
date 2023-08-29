@@ -66,6 +66,12 @@
               {{-- @endif --}}
             </li>
             <li class="nav-item">
+              <a class="nav-link " href="{{ route('sponsore.index') }}" role="button">
+                <i class="fa-solid fa-people-roof"></i>
+                <span class="nav-link-text">Sponsored</span>
+              </a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link " href="{{ route('dashboard.action-request') }}" role="button">
                 <i class="fa fa-message"></i>
                 <span class="nav-link-text">{{__('Dashboard.Action Requests')}}</span>

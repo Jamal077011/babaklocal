@@ -4,15 +4,20 @@ namespace App\Models\Dashboard;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\User;
 
 class Sponsore extends Model
 {
     use HasFactory;
     protected $table = 'sponsores';
 
-    protected $fillable = [ 'ar_name','en_name', 'employer_id', 'company_id','phone', 'gender', 'email', 'job_title_id', 'nationality_id', 'country_id', 'relative_relation'];
+    protected $fillable = [ 'ar_name','en_name', 'user_id', 'employer_id' ,'phone', 'gender', 'email', 'job_title_id', 'nationality_id', 'country_id', 'relative_relation'];
 
     public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+    public function employer()
     {
         return $this->belongsTo(Employer::class);
     }

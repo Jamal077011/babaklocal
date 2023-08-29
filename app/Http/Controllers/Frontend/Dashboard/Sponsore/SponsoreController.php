@@ -16,10 +16,11 @@ class SponsoreController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(string $id)
+    public function index()
     {
-
-
+        $sponsored = Sponsore::with('user')->where('user_id', auth()->user()->id)->orderBy('created_at', 'desc')->paginate(10);
+        return view('frontend.dashboard.pages.sponsore.index', compact('sponsored'));
+  
     }
 
     /**
@@ -27,17 +28,20 @@ class SponsoreController extends Controller
      */
     public function create()
     {
+        $employers = Employer::where('user_id', auth()->user()->id)->orderBy('id')->get();
         $nationalities = Nationality::all();
         $job_titles = jobTitle::all();
-        return view('frontend.dashboard.pages.sponsore.create', compact('nationalities', 'job_titles'));
+        return view('frontend.dashboard.pages.sponsore.create', compact('employers', 'nationalities', 'job_titles'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {
-        //
+    {   
+        $sponsored = Sponsore::create($request->all());
+
+        return redirect()->route('sponsore.index')->with('success', 'Sponsore created successfully.');
     }
 
     /**
@@ -45,13 +49,14 @@ class SponsoreController extends Controller
      */
     public function show(string $id)
     {
-        $sponsored = Sponsore::where('employer_id', $id)->orderBy('created_at', 'desc')->get();
-        return view('frontend.dashboard.pages.sponsore.index', compact('sponsored'));
+        $sponsore = Sponsore::findOrFail($id);
+        return view('frontend.dashboard.pages.sponsore.show', compact('sponsore'));
     }
     public function show_single(string $id)
     {
-        $sponsored = Sponsore::findOrFail($id);
-        return view('frontend.dashboard.pages.sponsore.show', compact('sponsored'));
+
+        $sponsored = Sponsore::where('employer_id', $id)->orderBy('created_at', 'desc')->get();
+        return view('frontend.dashboard.pages.sponsore.show_employer_sponsored', compact('sponsored'));
 
     }
 
@@ -60,7 +65,11 @@ class SponsoreController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $sponsored = Sponsore::findOrFail($id);
+        $employers = Employer::where('user_id', auth()->user()->id)->orderBy('id')->get();
+        $nationalities = Nationality::all();
+        $job_titles = jobTitle::all();
+        return view('frontend.dashboard.pages.sponsore.edit', compact('sponsored', 'employers', 'nationalities', 'job_titles'));
     }
 
     /**
@@ -68,7 +77,10 @@ class SponsoreController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $sponsored = Sponsore::findOrFail($id);
+        $sponsored->update($request->all());
+
+        return redirect()->route('sponsore.index')->with('success', 'sponsored updated successfully.');
     }
 
     /**
@@ -76,6 +88,9 @@ class SponsoreController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $sponsored = Sponsore::findOrFail($id);
+        $sponsored->delete();
+
+        return redirect()->route('sponsore.index')->with('success', 'sponsore deleted successfully.');
     }
 }
