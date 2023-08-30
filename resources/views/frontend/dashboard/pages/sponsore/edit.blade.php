@@ -41,7 +41,7 @@
                 @enderror
             </div>
             </div>
-        <div class=" ">
+        {{-- <div class=" ">
 
         <div class="form-group ">
             <label for="exampleFormControlInput1">Employer</label>
@@ -50,12 +50,11 @@
                 <option value="{{ $employee->id }}">{{ $employee->en_name }}</option>
                 @endforeach
             </select>
-            {{-- <input name="company_id" type="text" class="form-control" id="exampleFormControlInput1" placeholder=""> --}}
             @error('employer_id')
             <small class="text-danger">{{ $message }}</small>
             @enderror <br>
         </div>
-        </div>
+        </div> --}}
         <div class=" ">
         <div class="form-group ">
             <label for="exampleFormControlInput1">{{__('Dashboard.Email')}}</label>
@@ -74,7 +73,7 @@
             @enderror
         </div>
         </div>
-        <div class=" ">
+        {{-- <div class=" ">
             <div class="form-group ">
                 <label for="exampleFormControlInput1">Gender</label>
                 <select class="form-control form-control-lg" name="gender"  value="{{ old('gender') }}"  autofocus value="{{$sponsored->gender}}">
@@ -82,13 +81,12 @@
                     <option value="female">Female</option>
 
                 </select>
-                {{-- <input name="gender" type="text" required class="form-control" id="exampleFormControlInput1" placeholder=""> --}}
                 @error('gender')
                 <small class="text-danger">{{ $message }}</small>
                 @enderror <br>
             </div>
-            </div>
-            <div class=" ">
+            </div> --}}
+            {{-- <div class=" ">
                 <div class="form-group ">
                     <label for="exampleFormControlInput1">Nationality</label>
                     <select class="form-control form-control-lg" name="nationality_id"  value="{{ $sponsored->nationality_id }}"  autofocus >
@@ -96,13 +94,12 @@
                         <option value="{{ $nationality->id }}">{{ $nationality->name }}</option>
                         @endforeach
                     </select>
-                    {{-- <input name="nationality_id" type="text" class="form-control" id="exampleFormControlInput1" placeholder=""> --}}
                     @error('nationality_id')
                     <small class="text-danger">{{ $message }}</small>
                     @enderror <br>
                 </div>
-                </div>
-                <div class=" ">
+                </div> --}}
+                {{-- <div class=" ">
                     <div class="form-group ">
                         <label for="exampleFormControlInput1">{{__('Dashboard.Job')}}</label>
                         <select class="form-control form-control-lg" name="job_title_id"  value="{{ old('job_title_id') }}" value="{{ $sponsored->job_title_id }}" autofocus >
@@ -110,12 +107,11 @@
                             <option value="{{ $job->id }}">{{ $job->name }}</option>
                             @endforeach
                         </select>
-                        {{-- <input name="job_title_id" type="text" class="form-control" id="exampleFormControlInput1" placeholder=""> --}}
                         @error('job_title_id')
                         <small class="text-danger">{{ $message }}</small>
                         @enderror <br>
                     </div>
-                    </div>
+                    </div> --}}
         <div class=" ">
             <div class="form-group ">
                 <label for="exampleFormControlInput1">{{__('Dashboard.Relative relation')}}</label>

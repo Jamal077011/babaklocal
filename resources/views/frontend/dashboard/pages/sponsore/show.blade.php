@@ -11,7 +11,7 @@
                 </h1>
             </div>
             <div class="col-6 text-right">
-                <a href="{{ route('sponsore.show', $sponsore->id) }}" class="btn btn-sm btn-primary"><i class="fas fa-arrow-left"></i>{{__('Dashboard.Go back')}} </a>
+                <a href="{{ route('sponsore.index') }}" class="btn btn-sm btn-primary"><i class="fas fa-arrow-left"></i>{{__('Dashboard.Go back')}} </a>
             </div>
         </div>
         <div class="row mt-5">

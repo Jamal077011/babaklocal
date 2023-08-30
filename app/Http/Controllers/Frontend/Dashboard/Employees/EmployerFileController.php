@@ -110,13 +110,13 @@ class EmployerFileController extends Controller
         $taskName = $employerName.' Employer File';
         $taskDesc = $file->name;
 
-        $employerOrder = new EmployeeFileOrders();
-        $employerOrder->file_id = $id;
-        $employerOrder->employer_id = $employerId;
-        $employerOrder->status_id = $statusId;
-        $employerOrder->save();
+        // $employerOrder = new EmployeeFileOrders();
+        // $employerOrder->file_id = $id;
+        // $employerOrder->employer_id = $employerId;
+        // $employerOrder->status_id = $statusId;
+        // $employerOrder->save();
 
-        $data = $this->createTask(33 , $taskName, $taskDesc);
+        $data = $this->createTask(155 , $taskName, $taskDesc);
         if ($data['status'] == '200') {
             # code...
             FacadesAlert::success('Request sent Successfully');

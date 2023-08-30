@@ -10,8 +10,14 @@
                 <!-- Card header -->
                 <div class="card-header border-0">
                     <div class="row">
-                        <h3 class="text-center">{{__('Dashboard.Sponsored')}}</h3>
+                        <div class="col-6">
+                        <h3 class="">{{__('Dashboard.Sponsored')}}</h3>
+                        </div>
+                        <div class="col-6 text-right">
+                            <a href="{{ route('employee.index') }}" class="btn btn-sm btn-primary"><i class="fas fa-arrow-left"></i>{{__('Dashboard.Go back')}} </a>
+                        </div>
                     </div>
+
                 </div>
                 <div class="row mt-3">
                     <div class="col-md-6">

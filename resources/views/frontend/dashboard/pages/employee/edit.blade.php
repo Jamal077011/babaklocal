@@ -58,7 +58,7 @@
             @enderror
         </div>
         </div>
-        <div class=" ">
+        {{-- <div class=" ">
             <div class="form-group ">
                 <label for="exampleFormControlInput1">Company</label>
                 <input name="company_id" type="text" class="form-control" id="exampleFormControlInput1" value="{{$employer->company_id}}">
@@ -66,8 +66,8 @@
                 <small class="text-danger">{{ $message }}</small>
                 @enderror <br>
             </div>
-            </div>
-            <div class=" ">
+            </div> --}}
+            {{-- <div class=" ">
                 <div class="form-group ">
                     <label for="exampleFormControlInput1">Gender</label>
                     <input name="gender" type="text" class="form-control" id="exampleFormControlInput1" value="{{$employer->gender}}">
@@ -84,8 +84,8 @@
                         <small class="text-danger">{{ $message }}</small>
                         @enderror <br>
                     </div>
-                    </div>
-        <div class=" ">
+                    </div> --}}
+        {{-- <div class=" ">
         <div class="form-group ">
             <label for="exampleFormControlInput1">{{__('Dashboard.Job')}}</label>
             <input name="job_title_id" type="text" class="form-control" id="exampleFormControlInput1" value="{{$employer->job_title_id}}">
@@ -93,16 +93,8 @@
             <small class="text-danger">{{ $message }}</small>
             @enderror <br>
         </div>
-        </div>
-        {{-- <div class=" ">
-            <div class="form-group ">
-                <label for="exampleFormControlInput1">Files</label>
-                <input name="files" type="file" class="form-control" id="exampleFormControlInput1" placeholder="">
-                @error('files')
-                <small class="text-danger">{{ $message }}</small>
-                @enderror <br>
-            </div>
         </div> --}}
+
 
 
 
