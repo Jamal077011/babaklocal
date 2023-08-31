@@ -128,10 +128,12 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function(){
     
     Route:: get('dashboard/employee/employeeFile/{id?}', 'App\Http\Controllers\Frontend\Dashboard\Employees\EmployerFileController@show')->name('employerfile.show');
     
-    Route:: get('dashboard/employee/employeeFile/renew/{id?}', 'App\Http\Controllers\Frontend\Dashboard\Employees\EmployerFileController@renew')->name('employerfile.renew');
+    Route:: post('dashboard/employee/employeeFile/renew/{id?}', 'App\Http\Controllers\Frontend\Dashboard\Employees\EmployerFileController@renew')->name('employerfile.renew');
     
     Route:: get('dashboard/employee/employeeFile/edit/{id?}', 'App\Http\Controllers\Frontend\Dashboard\Employees\EmployerFileController@edit')->name('employerfile.edit');
     Route:: put('dashboard/employee/employeeFile/update/{id?}', 'App\Http\Controllers\Frontend\Dashboard\Employees\EmployerFileController@update')->name('employerfile.update');
 
     Route:: post('dashboard/employee/employeeFile/{id?}', 'App\Http\Controllers\Frontend\Dashboard\Employees\EmployerFileController@destroy')->name('employerfile.destroy');
+    Route:: get('dashboard/employee/employeeFile/renew_request/{id?}', 'App\Http\Controllers\Frontend\Dashboard\Employees\EmployerFileController@renew_request')->name('employerfile.renew_request');
+
   });

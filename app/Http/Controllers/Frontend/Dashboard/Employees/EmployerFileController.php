@@ -101,22 +101,23 @@ class EmployerFileController extends Controller
         return redirect()->back()->with('success', 'Employer file deleted successfully.');
     }
 
+
     public function renew(Request $request, $id){
+        $note = $request->note;
         $file = EmployerFile::findOrFail($id);
         $employer = Employer::findOrFail($file->employer_id);
         $employerName = $employer->name;
         $employerId = $employer->id;
         $statusId = 1;
         $taskName = $employerName.' Employer File';
-        $taskDesc = $file->name;
-
+        $taskDesc = $file->name.'<br>'.$note;
         // $employerOrder = new EmployeeFileOrders();
         // $employerOrder->file_id = $id;
         // $employerOrder->employer_id = $employerId;
         // $employerOrder->status_id = $statusId;
         // $employerOrder->save();
 
-        $data = $this->createTask(155 , $taskName, $taskDesc);
+        $data = $this->createTask(33 , $taskName, $taskDesc);
         if ($data['status'] == '200') {
             # code...
             FacadesAlert::success('Request sent Successfully');
@@ -125,6 +126,13 @@ class EmployerFileController extends Controller
         }
         return redirect()->back();
 
+    }
+    public function renew_request($id){
+        $file = EmployerFile::findOrFail($id);
+        $employer = Employer::findOrFail($file->employer_id);
+        // $img = Storage::url($file->filename);
+        // $img = Storage::url('Asset_11.png');
+        return view('frontend.dashboard.pages.employeeFile.renew', compact('file', 'employer'));
     }
 }
 

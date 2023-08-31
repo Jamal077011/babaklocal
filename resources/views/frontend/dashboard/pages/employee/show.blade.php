@@ -5,6 +5,7 @@
 <div class="container">
     <div class="container my-5 rounded shadow-lg bg-white py-5 pb-5">
         <div class="row">
+            
             <div class="col-md-6">
                 <h1>
                 {{__('Dashboard.Employee Information')}}
@@ -77,8 +78,9 @@
                               <div class="btn-group" role="group">
                                 <button id="btnGroupDrop1" class="btn btn-sm btn-outline-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{__('Dashboard.Action')}}</button>
                                 <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                                  <a href="{{ route('employerfile.show', $file->id) }}" class="dropdown-item "><i class="fa-solid fa-eye fa-lg p-2"></i>{{__('Dashboard.Review')}}</a>
-                                  <a href="{{ route('employerfile.renew', $file->id) }}" class="dropdown-item"><i class="fa-solid fa-arrows-rotate fa-lg p-2"></i>{{__('Dashboard.Renew')}}</a>
+                                  <a href="{{ route('employerfile.show', $file->id) }}" class="dropdown-item"><i class="fa-solid fa-eye fa-lg p-2"></i>{{__('Dashboard.Review')}}</a>
+                                  <a href="{{ route('employerfile.renew_request', $file->id) }}" class="dropdown-item"><i class="fa-solid fa-arrows-rotate fa-lg p-2"></i>{{__('Dashboard.Renew')}}</a>
+
                                   <a href="{{ route('employerfile.edit', $file->id) }}" class="dropdown-item"><i class="fa-solid fa-pen fa-lg p-2"></i>{{__('Dashboard.Edit')}}</a>
                                   <form action="{{ route('employerfile.destroy',$file->id) }}" method="POST">
                                   @csrf
@@ -93,8 +95,10 @@
                         @endforeach
                     </tbody>
                 </table>
+
             </div>
         </div>
     </div>
 </div>
+
 @endsection
