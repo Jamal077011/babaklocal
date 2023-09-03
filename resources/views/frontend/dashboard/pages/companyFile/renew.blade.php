@@ -11,11 +11,11 @@
             </h1>
             </div>
             <div class="col-md-6 text-right">
-                <a href="{{ route('employee.show', $employer->id) }}" class="btn btn-sm btn-primary mr-8 ml-4"><i class="fas fa-arrow-left"></i>{{__('Dashboard.Go back')}} </a>
+                <a href="{{ route('companies.show', $company->id) }}" class="btn btn-sm btn-primary mr-8 ml-4"><i class="fas fa-arrow-left"></i>{{__('Dashboard.Go back')}} </a>
             </div>
         </div>
         <div class="card-body">
-        <form action="{{route('employerfile.renew', ['id' => $file->id])}}" method="POST" enctype="multipart/form-data">
+        <form action="{{route('companyfile.renew', ['id' => $file->id])}}" method="POST" enctype="multipart/form-data">
             @csrf
                 <div class="">
                     <div class="form-group ">

@@ -114,8 +114,10 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function(){
     
     Route:: get('dashboard/companies/companyFile/{id?}', 'App\Http\Controllers\Frontend\Dashboard\CompanyFileController@show')->name('companyfile.show');
     
-    Route:: get('dashboard/companies/companyFile/renew/{id?}', 'App\Http\Controllers\Frontend\Dashboard\CompanyFileController@renew')->name('companyfile.renew');
-    
+    Route:: post('dashboard/companies/companyFile/renew/{id?}', 'App\Http\Controllers\Frontend\Dashboard\CompanyFileController@renew')->name('companyfile.renew');
+
+    Route:: get('dashboard/companies/companyFile/renew_request/{id?}', 'App\Http\Controllers\Frontend\Dashboard\CompanyFileController@renew_request')->name('companyfile.renew_request');
+
     Route:: get('dashboard/companies/companyFile/edit/{id?}', 'App\Http\Controllers\Frontend\Dashboard\CompanyFileController@edit')->name('companyfile.edit');
     Route:: put('dashboard/companies/companyFile/edit/{id?}', 'App\Http\Controllers\Frontend\Dashboard\CompanyFileController@update')->name('companyfile.update');
 
@@ -135,5 +137,28 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function(){
 
     Route:: post('dashboard/employee/employeeFile/{id?}', 'App\Http\Controllers\Frontend\Dashboard\Employees\EmployerFileController@destroy')->name('employerfile.destroy');
     Route:: get('dashboard/employee/employeeFile/renew_request/{id?}', 'App\Http\Controllers\Frontend\Dashboard\Employees\EmployerFileController@renew_request')->name('employerfile.renew_request');
+
+    
+
+
+
+
+
+
+
+
+
+    Route:: get('dashboard/sponsore/{id?}/sponsoreFile/fileForm', 'App\Http\Controllers\Frontend\Dashboard\Sponsore\SponsoreFileController@FileForm')->name('sponsorefile');
+    Route:: post('dashboard/sponsore/{id?}/sponsoreFile/addSponsoreFile', 'App\Http\Controllers\Frontend\Dashboard\Sponsore\SponsoreFileController@addSponsoreFile')->name('sponsorefile.addSponsoreFile');
+    
+    Route:: get('dashboard/sponsore/sponsoreFile/{id?}', 'App\Http\Controllers\Frontend\Dashboard\Sponsore\SponsoreFileController@show')->name('sponsorefile.show');
+    
+    Route:: post('dashboard/sponsore/sponsoreFile/renew/{id?}', 'App\Http\Controllers\Frontend\Dashboard\Sponsore\SponsoreFileController@renew')->name('sponsorefile.renew');
+    
+    Route:: get('dashboard/sponsore/sponsoreFile/edit/{id?}', 'App\Http\Controllers\Frontend\Dashboard\Sponsore\SponsoreFileController@edit')->name('sponsorefile.edit');
+    Route:: put('dashboard/sponsore/sponsoreFile/update/{id?}', 'App\Http\Controllers\Frontend\Dashboard\Sponsore\SponsoreFileController@update')->name('sponsorefile.update');
+
+    Route:: post('dashboard/sponsore/sponsoreFile/{id?}', 'App\Http\Controllers\Frontend\Dashboard\Sponsore\SponsoreFileController@destroy')->name('sponsorefile.destroy');
+    Route:: get('dashboard/sponsore/sponsoreFile/renew_request/{id?}', 'App\Http\Controllers\Frontend\Dashboard\Sponsore\SponsoreFileController@renew_request')->name('sponsorefile.renew_request');
 
   });

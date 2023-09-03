@@ -13,6 +13,21 @@ return new class extends Migration
     {
         Schema::create('sponsore_files', function (Blueprint $table) {
             $table->id();
+
+            $table->unsignedBigInteger('sponsore_id')->unsigned();
+
+            $table->foreign('sponsore_id')->references('id')->on('sponsores')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+            
+              
+            $table->string('name');
+  
+            $table->string('filename');
+  
+            $table->date('start_date');
+            $table->date('end_date');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

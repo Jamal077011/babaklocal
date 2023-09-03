@@ -51,7 +51,7 @@
                 </h1>
             </div>
             <div class="col-md-6 text-right">
-                <a href="" class="btn btn-sm btn-success "><i class="fas fa-plus"></i>{{__('Dashboard.Add New File')}}</a>
+                <a href="{{ route('sponsorefile',$sponsore->id) }}" class="btn btn-sm btn-success "><i class="fas fa-plus"></i>{{__('Dashboard.Add New File')}}</a>
               </div>
         </div>
         <div class="row mt-5">
@@ -66,7 +66,7 @@
                         <th scope="col">{{__('Dashboard.Action')}}</th>
                         </tr>
                     </thead>
-                    {{-- <tbody class="list">
+                    <tbody class="list">
                         @foreach ($files as $file)
                         <tr>
                           <td><i class="fa-solid fa-file-pdf fa-lg"></i></td>
@@ -77,10 +77,10 @@
                               <div class="btn-group" role="group">
                                 <button id="btnGroupDrop1" class="btn btn-sm btn-outline-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{__('Dashboard.Action')}}</button>
                                 <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                                  <a href="{{ route('employerfile.show', $file->id) }}" class="dropdown-item "><i class="fa-solid fa-eye fa-lg p-2"></i>{{__('Dashboard.Review')}}</a>
-                                  <a href="{{ route('employerfile.renew', $file->id) }}" class="dropdown-item"><i class="fa-solid fa-arrows-rotate fa-lg p-2"></i>{{__('Dashboard.Renew')}}</a>
-                                  <a href="{{ route('employerfile.edit', $file->id) }}" class="dropdown-item"><i class="fa-solid fa-pen fa-lg p-2"></i>{{__('Dashboard.Edit')}}</a>
-                                  <form action="{{ route('employerfile.destroy',$file->id) }}" method="POST">
+                                  <a href="{{ route('sponsorefile.show', $file->id) }}" class="dropdown-item "><i class="fa-solid fa-eye fa-lg p-2"></i>{{__('Dashboard.Review')}}</a>
+                                  <a href="{{ route('sponsorefile.renew_request', $file->id) }}" class="dropdown-item"><i class="fa-solid fa-arrows-rotate fa-lg p-2"></i>{{__('Dashboard.Renew')}}</a>
+                                  <a href="{{ route('sponsorefile.edit', $file->id) }}" class="dropdown-item"><i class="fa-solid fa-pen fa-lg p-2"></i>{{__('Dashboard.Edit')}}</a>
+                                  <form action="{{ route('sponsorefile.destroy',$file->id) }}" method="POST">
                                   @csrf
                                   @method('post')
                                   <button class="dropdown-item"><i class="fa-solid fa-trash fa-lg p-2"></i>{{__('Dashboard.Delete')}}</button>
@@ -91,7 +91,7 @@
                           </td>
                         </tr>
                         @endforeach
-                    </tbody> --}}
+                    </tbody>
                 </table>
             </div>
         </div>

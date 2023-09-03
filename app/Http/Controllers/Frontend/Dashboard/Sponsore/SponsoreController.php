@@ -9,6 +9,7 @@ use App\Models\Dashboard\EmployerFile;
 use App\Models\Dashboard\jobTitle;
 use App\Models\Dashboard\Nationality;
 use App\Models\Dashboard\Sponsore;
+use App\Models\Dashboard\SponsoreFile;
 use Illuminate\Http\Request;
 
 class SponsoreController extends Controller
@@ -16,10 +17,16 @@ class SponsoreController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
+        $employees = Employer::where('user_id', auth()->user()->id)->orderBy('id')->get();
+
         $sponsored = Sponsore::with('user')->where('user_id', auth()->user()->id)->orderBy('created_at', 'desc')->paginate(10);
-        return view('frontend.dashboard.pages.sponsore.index', compact('sponsored'));
+        
+        if($request->employer){
+            $sponsored = Sponsore::where('employer_id', $request->employer)->orderBy('created_at', 'desc')->paginate(5);
+        }
+        return view('frontend.dashboard.pages.sponsore.index', compact('sponsored', 'employees'));
   
     }
 
@@ -50,12 +57,15 @@ class SponsoreController extends Controller
     public function show(string $id)
     {
         $sponsore = Sponsore::findOrFail($id);
-        return view('frontend.dashboard.pages.sponsore.show', compact('sponsore'));
+        $files = SponsoreFile::where('sponsore_id', $id)->orderBy('created_at', 'desc')->get();
+
+        return view('frontend.dashboard.pages.sponsore.show', compact('sponsore', 'files'));
     }
     public function show_single(string $id)
     {
 
         $sponsored = Sponsore::where('employer_id', $id)->orderBy('created_at', 'desc')->get();
+
         return view('frontend.dashboard.pages.sponsore.show_employer_sponsored', compact('sponsored'));
 
     }

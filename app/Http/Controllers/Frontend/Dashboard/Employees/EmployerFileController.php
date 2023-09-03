@@ -104,7 +104,9 @@ class EmployerFileController extends Controller
 
     public function renew(Request $request, $id){
         $note = $request->note;
+
         $file = EmployerFile::findOrFail($id);
+
         $employer = Employer::findOrFail($file->employer_id);
         $employerName = $employer->name;
         $employerId = $employer->id;
@@ -124,7 +126,7 @@ class EmployerFileController extends Controller
         }else{
             FacadesAlert::error('Request failed');
         }
-        return redirect()->back();
+        return redirect()->route('employee.show', $employer->id)->with('success', 'Employer file updated successfully.');
 
     }
     public function renew_request($id){

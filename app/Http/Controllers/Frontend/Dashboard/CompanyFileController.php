@@ -94,13 +94,14 @@ class CompanyFileController extends Controller
     }
 
     public function renew(Request $request, $id){
+        $note = $request->note;
         $file = CompanyFile::findOrFail($id);
         $company = Company::findOrFail($file->company_id);
         $companyName = $company->name;
         $companyId = $company->id;
         $statusId = 1;
         $taskName = $companyName.' Company File';
-        $taskDesc = $file->name;
+        $taskDesc = $file->name.'<br>'.$note;
 
         $companyOrder = new CompanyFileOrder();
         $companyOrder->file_id = $id;
@@ -115,7 +116,14 @@ class CompanyFileController extends Controller
         }else{
             FacadesAlert::error('Request failed');
         }
-        return redirect()->back();
+        return redirect()->route('companies.show', $company->id)->with('success', 'Company file updated successfully.');
 
+    }
+    public function renew_request($id){
+        $file = CompanyFile::findOrFail($id);
+        $company = Company::findOrFail($file->company_id);
+        // $img = Storage::url($file->filename);
+        // $img = Storage::url('Asset_11.png');
+        return view('frontend.dashboard.pages.companyFile.renew', compact('file', 'company'));
     }
 }
