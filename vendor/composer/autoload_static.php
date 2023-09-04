@@ -651,6 +651,8 @@ class ComposerStaticInit758f175a9cb981b0bb7d677601ff888c
         'App\\Http\\Controllers\\Frontend\\Dashboard\\Employees\\EmployerController' => __DIR__ . '/../..' . '/app/Http/Controllers/Frontend/Dashboard/Employees/EmployerController.php',
         'App\\Http\\Controllers\\Frontend\\Dashboard\\Employees\\EmployerFileController' => __DIR__ . '/../..' . '/app/Http/Controllers/Frontend/Dashboard/Employees/EmployerFileController.php',
         'App\\Http\\Controllers\\Frontend\\Dashboard\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/Frontend/Dashboard/HomeController.php',
+        'App\\Http\\Controllers\\Frontend\\Dashboard\\Sponsore\\SponsoreController' => __DIR__ . '/../..' . '/app/Http/Controllers/Frontend/Dashboard/Sponsore/SponsoreController.php',
+        'App\\Http\\Controllers\\Frontend\\Dashboard\\Sponsore\\SponsoreFileController' => __DIR__ . '/../..' . '/app/Http/Controllers/Frontend/Dashboard/Sponsore/SponsoreFileController.php',
         'App\\Http\\Controllers\\Frontend\\MenuController' => __DIR__ . '/../..' . '/app/Http/Controllers/Frontend/MenuController.php',
         'App\\Http\\Controllers\\Frontend\\RoleController' => __DIR__ . '/../..' . '/app/Http/Controllers/Frontend/RoleController.php',
         'App\\Http\\Controllers\\Frontend\\SettingsController' => __DIR__ . '/../..' . '/app/Http/Controllers/Frontend/SettingsController.php',

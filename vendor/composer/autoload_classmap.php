@@ -39,6 +39,8 @@ return array(
     'App\\Http\\Controllers\\Frontend\\Dashboard\\Employees\\EmployerController' => $baseDir . '/app/Http/Controllers/Frontend/Dashboard/Employees/EmployerController.php',
     'App\\Http\\Controllers\\Frontend\\Dashboard\\Employees\\EmployerFileController' => $baseDir . '/app/Http/Controllers/Frontend/Dashboard/Employees/EmployerFileController.php',
     'App\\Http\\Controllers\\Frontend\\Dashboard\\HomeController' => $baseDir . '/app/Http/Controllers/Frontend/Dashboard/HomeController.php',
+    'App\\Http\\Controllers\\Frontend\\Dashboard\\Sponsore\\SponsoreController' => $baseDir . '/app/Http/Controllers/Frontend/Dashboard/Sponsore/SponsoreController.php',
+    'App\\Http\\Controllers\\Frontend\\Dashboard\\Sponsore\\SponsoreFileController' => $baseDir . '/app/Http/Controllers/Frontend/Dashboard/Sponsore/SponsoreFileController.php',
     'App\\Http\\Controllers\\Frontend\\MenuController' => $baseDir . '/app/Http/Controllers/Frontend/MenuController.php',
     'App\\Http\\Controllers\\Frontend\\RoleController' => $baseDir . '/app/Http/Controllers/Frontend/RoleController.php',
     'App\\Http\\Controllers\\Frontend\\SettingsController' => $baseDir . '/app/Http/Controllers/Frontend/SettingsController.php',
