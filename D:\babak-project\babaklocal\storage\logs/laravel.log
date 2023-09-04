@@ -1,0 +1,12 @@
+[2023-09-04 07:23:34] local.ERROR: Cannot declare class App\Helpers\FileUploader, because the name is already in use {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot declare class App\\Helpers\\FileUploader, because the name is already in use at /home/arabtech/Desktop/projects/babaklocal/app/helpers.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2023-09-04 07:24:34] local.ERROR: Cannot declare class App\Helpers\FileUploader, because the name is already in use {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot declare class App\\Helpers\\FileUploader, because the name is already in use at /home/arabtech/Desktop/projects/babaklocal/app/helpers.php:8)
+[stacktrace]
+#0 {main}
+"} 
+[2023-09-04 07:25:34] local.ERROR: Cannot declare class App\Helpers\FileUploader, because the name is already in use {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot declare class App\\Helpers\\FileUploader, because the name is already in use at /home/arabtech/Desktop/projects/babaklocal/app/helpers.php:8)
+[stacktrace]
+#0 {main}
+"} 
