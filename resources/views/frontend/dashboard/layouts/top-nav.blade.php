@@ -39,8 +39,8 @@
           </a>
           <div class="dropdown-menu  dropdown-menu-left ">
               @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
-                    <div class="px-3 py-3">
-                      <a rel="alternate" class="text-muted" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                    <div class="px-3 ">
+                      <a rel="alternate" class="text-muted dropdown-item" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
                           {{ $properties['native'] }}
                       </a>
                     </div>

@@ -22,7 +22,7 @@
         <div class="">
             <div class="form-group ">
                 <label for="exampleFormControlInput1">{{__('Dashboard.File Name')}}</label>
-                <input name="name" type="name" class="form-control" id="exampleFormControlInput1" placeholder="">
+                <input name="name" type="name" class="form-control" required id="exampleFormControlInput1" placeholder="">
                 @error('password_confirmation')
                 <small class="text-danger">{{ $message }}</small>
                 @enderror <br>
@@ -31,7 +31,7 @@
         <div class=" ">
             <div class="form-group ">
                 <label for="exampleFormControlInput1">{{__('Dashboard.Start Date')}}</label>
-                <input name="start_date" type="date" class="form-control" id="exampleFormControlInput1" placeholder="">
+                <input name="start_date"  class="form-control" required id="start_date" placeholder="">
                 @error('password_confirmation')
                 <small class="text-danger">{{ $message }}</small>
                 @enderror <br>
@@ -40,7 +40,7 @@
         <div class="">
             <div class="form-group ">
                 <label for="exampleFormControlInput1">{{__('Dashboard.End Date')}}</label>
-                <input name="end_date" type="date" class="form-control" id="exampleFormControlInput1" placeholder="">
+                <input name="end_date"  class="form-control" required id="end_date" placeholder="">
                 @error('password_confirmation')
                 <small class="text-danger">{{ $message }}</small>
                 @enderror <br>
@@ -49,7 +49,7 @@
         <div class=" ">
             <div class="form-group ">
                 <label for="exampleFormControlInput1">{{__('Dashboard.File')}}</label>
-                <input name="file" type="file" class="form-control" id="exampleFormControlInput1" placeholder="">
+                <input name="file" type="file" class="form-control" required id="exampleFormControlInput1" placeholder="">
                 @error('password_confirmation')
                 <small class="text-danger">{{ $message }}</small>
                 @enderror <br>
@@ -60,5 +60,14 @@
 </div>
 </div>
 </div>
-
+<script>
+    $('#start_date').datepicker({
+        uiLibrary: 'bootstrap4',
+        format: "dd-mm-yyyy",
+    });
+    $('#end_date').datepicker({
+        uiLibrary: 'bootstrap4',
+        format: "dd-mm-yyyy",
+    });
+</script>
 @endsection

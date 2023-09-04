@@ -177,8 +177,11 @@ return [
   'Female'=>"أنثي",
   'Review Sponsored'=>"عرض المكفولين",
   'Edit Employee'=>"تعديل بيانات الموظف",
-  'Sponsored Name'=>"اسم المكفول",
   "Sponsored Files"=>'ملفات المكفولين',
+  'Edit Sponsored'=> "تعديل بيانات المكفول",
+  'Renew File' => "تجديد الملف",
+  'Add your notes' => "أضف ملاحظاتك",
+  'Send' =>"إرسال",
   
     
   

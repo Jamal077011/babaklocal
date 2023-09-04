@@ -21,7 +21,7 @@
                 <div class="">
                     <div class="form-group ">
                         <label for="name">{{__('Dashboard.File Name')}}</label>
-                        <input name="name" type="text" class="form-control" id="name" value="{{ old('name')}}" placeholder="">
+                        <input name="name" type="text" class="form-control" id="name" required value="{{ old('name')}}" placeholder="">
                         @error('name')
                             <small class="text-danger">{{ $message }}</small>
                         @enderror <br>
@@ -30,7 +30,7 @@
                 <div class=" ">
                     <div class="form-group ">
                         <label for="start_date">{{__('Dashboard.Start Date')}}</label>
-                        <input name="start_date" type="date" class="form-control" value="{{ old('start_date')}}" id="start_date" placeholder="">
+                        <input name="start_date"   class="form-control " value="{{ old('start_date')}}" required id="start_date" placeholder="">
                         @error('start_date')
                         <small class="text-danger">{{ $message }}</small>
                         @enderror <br>
@@ -39,7 +39,7 @@
                 <div class="">
                     <div class="form-group ">
                         <label for="end_date">{{__('Dashboard.End Date')}}</label>
-                        <input name="end_date" type="date" class="form-control" value="{{ old('end_date')}}" id="end_date" placeholder="">
+                        <input name="end_date"  class="form-control " value="{{ old('end_date')}}" required id="end_date" placeholder="">
                         @error('end_date')
                         <small class="text-danger">{{ $message }}</small>
                         @enderror <br>
@@ -48,15 +48,27 @@
                 <div class=" ">
                     <div class="form-group ">
                         <label for="file">{{__('Dashboard.File')}}</label>
-                        <input name="file" type="file" class="form-control" value="{{ old('file')}}" id="file" placeholder="">
+                        <input name="file" type="file" class="form-control" value="{{ old('file')}}" required id="file" placeholder="">
                         @error('file')
                         <small class="text-danger">{{ $message }}</small>
                         @enderror <br>
                     </div>
                 </div>
                 <button class="btn btn-primary">{{__('Dashboard.Save')}}</button>
+                
+
             </form>
         </div>
     </div>
 </div>
+<script>
+    $('#start_date').datepicker({
+        uiLibrary: 'bootstrap4',
+        format: "dd-mm-yyyy",
+    });
+    $('#end_date').datepicker({
+        uiLibrary: 'bootstrap4',
+        format: "dd-mm-yyyy",
+    });
+</script>
 @endsection

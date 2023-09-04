@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col-md-6">
             <h1 class="m-3">
-                Renew File
+                {{__('Dashboard.Renew File')}}
             </h1>
             </div>
             <div class="col-md-6 text-right">
@@ -19,14 +19,14 @@
             @csrf
                 <div class="">
                     <div class="form-group ">
-                        <h2 >Add your notes</h2>
+                        <h2 >{{__('Dashboard.Add your notes')}}</h2>
                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name=note></textarea>                        @error('password_confirmation')
                         <small class="text-danger">{{ $message }}</small>
                         @enderror <br>
                     </div>
                 </div>
                 <div class="text-center">
-                <button class="btn btn-primary ">Send</button>
+                <button class="btn btn-primary ">{{__('Dashboard.Send')}}</button>
                 </div>
 
         </form>

@@ -14,11 +14,11 @@
                         <div class="col-6"><h3 class="">{{__('Dashboard.Employees')}}</h3>
                             <a href="{{ route('employee.create')}}" class="btn btn-success"><b><i class="fas fa-plus"></i> {{__('Dashboard.Add New Employee')}}</b></a>
                             <li class="nav-item dropdown">
-                                <button class="btn " href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: #fff"><span>{{__('Dashboard.Company')}}</span></button>
+                                <button class="btn dropdown-toggle " href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: #fff"><span>{{__('Dashboard.Company')}}</span></button>
                                 <div class="dropdown-menu dropdown-menu-m  dropdown-menu-right  py-0 overflow-hidden">
                                 @foreach ($companies as $company)
                                   <div class="px-3 py-3">
-                                    <a href="{{route('employee.index', ['company' => $company->id])}}" class="text text-muted m-0">{{$company->name}}</a>
+                                    <a href="{{route('employee.index', ['company' => $company->id])}}" class="text text-muted m-0 dropdown-item">{{$company->name}}</a>
                                   </div>
                                 @endforeach
                       
@@ -26,7 +26,7 @@
                               </li>
                         </div>
                         
-                        <div class="col-6 ">
+                        {{-- <div class="col-6 ">
                             <form>
                                 <div class="row">
                                     <div class=" col-md-4 ">
@@ -48,7 +48,7 @@
                                     </div>    
                                 </div>
                             </form>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
                 <div class="row mt-3">

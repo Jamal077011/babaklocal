@@ -13,18 +13,18 @@
                         <div class="col-6"><h3 class="">{{__('Dashboard.Sponsored')}}</h3>
                             <a href="{{route('sponsore.create')}}" class="btn btn-success"><b><i class="fas fa-plus"></i>{{__('Dashboard.Add new Sponsored')}}</b></a>
                             <li class="nav-item dropdown">
-                                <button class="btn " href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: #fff"><span>{{__('Dashboard.Employee')}}</span><i class="fa-sharp fa-solid fa-arrow-down"></i></button>
+                                <button class="btn dropdown-toggle " href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: #fff"><span>{{__('Dashboard.Employee')}}</span></button>
                                 <div class="dropdown-menu dropdown-menu-m  dropdown-menu-right  py-0 overflow-hidden">
                                 @foreach ($employees as $employer)
                                   <div class="px-3 py-3">
-                                    <a href="{{route('sponsore.index', ['employer' => $employer->id])}}" class="text text-muted m-0">{{$employer->en_name}}</a>
+                                    <a href="{{route('sponsore.index', ['employer' => $employer->id])}}" class="text text-muted m-0 dropdown-item">{{$employer->en_name}}</a>
                                   </div>
                                 @endforeach
                       
                                 </div>
                               </li>
                         </div>
-                        <div class="col-6 ">
+                        {{-- <div class="col-6 ">
                             <form>
                                 <div class="row">
                                     <div class=" col-md-4 ">
@@ -46,7 +46,7 @@
                                     </div>    
                                 </div>
                             </form>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
                 <div class="row mt-3">

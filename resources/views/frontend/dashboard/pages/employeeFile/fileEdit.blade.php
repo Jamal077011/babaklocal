@@ -8,7 +8,7 @@
 <div class="card-header">
     <div class="row align-items-center">
         <div class="col-8">
-            <h3 class="mb-0">{{__('Dashboard.Create New File')}}</h3>
+            <h3 class="mb-0">{{__('Dashboard.Edit')}}</h3>
         </div>
         <div class="col-4 text-right">
             <a href="{{ route('employee.show', $employer->id) }}" class="btn btn-sm btn-primary"><i class="fas fa-arrow-left"></i>{{__('Dashboard.Go back')}} </a>
@@ -32,7 +32,7 @@
         <div class=" ">
             <div class="form-group ">
                 <label for="exampleFormControlInput1">{{__('Dashboard.Start Date')}}</label>
-                <input name="start_date" type="date" class="form-control" id="exampleFormControlInput1" value="{{$file->start_date}}"  placeholder="">
+                <input name="start_date"  class="form-control" id="start_date" value="{{$file->start_date}}"  placeholder="">
                 @error('password_confirmation')
                 <small class="text-danger">{{ $message }}</small>
                 @enderror <br>
@@ -41,7 +41,7 @@
         <div class="">
             <div class="form-group ">
                 <label for="exampleFormControlInput1">{{__('Dashboard.End Date')}}</label>
-                <input name="end_date" type="date" class="form-control" id="exampleFormControlInput1" value="{{$file->end_date}}" placeholder="">
+                <input name="end_date"  class="form-control" id="end_date" value="{{$file->end_date}}" placeholder="">
                 @error('password_confirmation')
                 <small class="text-danger">{{ $message }}</small>
                 @enderror <br>
@@ -62,5 +62,15 @@
 </div>
 </div>
 </div>
+<script>
+    $('#start_date').datepicker({
+        uiLibrary: 'bootstrap4',
+        format: "dd-mm-yyyy",
+    });
+    $('#end_date').datepicker({
+        uiLibrary: 'bootstrap4',
+        format: "dd-mm-yyyy",
+    });
+</script>
 
 @endsection

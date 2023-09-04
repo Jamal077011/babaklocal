@@ -32,7 +32,7 @@
                 <div class=" ">
                     <div class="form-group ">
                         <label for="start_date">{{__('Dashboard.Start Date')}}</label>
-                        <input name="start_date" type="date" class="form-control" value="{{$file->start_date}}" id="start_date" placeholder="">
+                        <input name="start_date" class="form-control" value="{{$file->start_date}}" id="start_date" placeholder="">
                         @error('start_date')
                         <small class="text-danger">{{ $message }}</small>
                         @enderror <br>
@@ -41,7 +41,7 @@
                 <div class="">
                     <div class="form-group ">
                         <label for="end_date">{{__('Dashboard.End Date')}}</label>
-                        <input name="end_date" type="date" class="form-control" value="{{$file->end_date}}" id="end_date" placeholder="">
+                        <input name="end_date"  class="form-control" value="{{$file->end_date}}" id="end_date" placeholder="">
                         @error('end_date')
                         <small class="text-danger">{{ $message }}</small>
                         @enderror <br>
@@ -62,4 +62,14 @@
         </div>
     </div>
 </div>
+<script>
+    $('#start_date').datepicker({
+        uiLibrary: 'bootstrap4',
+        format: "dd-mm-yyyy",
+    });
+    $('#end_date').datepicker({
+        uiLibrary: 'bootstrap4',
+        format: "dd-mm-yyyy",
+    });
+</script>
 @endsection

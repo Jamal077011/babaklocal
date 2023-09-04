@@ -23,7 +23,7 @@
         <div class="">
         <div class="form-group ">
             <label for="exampleFormControlInput1">{{__('Dashboard.Arabic Name')}}</label>
-            <input name="ar_name" type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+            <input name="ar_name" type="text" class="form-control" required id="exampleFormControlInput1" placeholder="">
             @error('ar_name')
                 <small class="text-danger">{{ $message }}</small>
             @enderror
@@ -33,7 +33,7 @@
         <div class="">
             <div class="form-group ">
                 <label for="exampleFormControlInput1">{{__('Dashboard.English Name')}}</label>
-                <input name="en_name" type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+                <input name="en_name" type="text" class="form-control" required id="exampleFormControlInput1" placeholder="">
                 @error('en_name')
                     <small class="text-danger">{{ $message }}</small>
                 @enderror
@@ -57,7 +57,7 @@
         <div class=" ">
         <div class="form-group ">
             <label for="exampleFormControlInput1">{{__('Dashboard.Email')}}</label>
-            <input name="email" type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+            <input name="email" type="text" class="form-control" required id="exampleFormControlInput1" placeholder="">
             @error('email')
                 <small class="text-danger">{{ $message }}</small>
             @enderror
@@ -66,7 +66,7 @@
         <div class=" ">
         <div class="form-group ">
             <label for="exampleFormControlInput1">{{__('Dashboard.Phone Number')}}</label>
-            <input name="phone" type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+            <input name="phone" type="text" class="form-control" required id="exampleFormControlInput1" placeholder="">
             @error('phone_number')
             <small class="text-danger">{{ $message }}</small>
             @enderror
@@ -117,7 +117,7 @@
         <div class=" ">
             <div class="form-group ">
                 <label for="exampleFormControlInput1">{{__('Dashboard.Relative relation')}}</label>
-                <input name="relative_relation" type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+                <input name="relative_relation" type="text" required class="form-control" id="exampleFormControlInput1" placeholder="">
                 @error('relative_relation')
                 <small class="text-danger">{{ $message }}</small>
                 @enderror <br>

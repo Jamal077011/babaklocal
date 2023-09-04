@@ -102,9 +102,7 @@ return [
     'Movement statement' => "Movement statement",
     'The amount' => "The amount",
     'Paid up' => "Paid up",
-    'Date' => "Date",
     'Debit balance' => "Debit balance",
-    'Credit' => "Credit",
     'Net balance' => "Net balance",
     'Notifications' => "Notifications",
     'Statement' => "Statement",
@@ -176,7 +174,10 @@ return [
     'Female'=>"Female",
     'Review Sponsored'=>"Review Sponsored",
     'Edit Employee'=>"Edit Employee",
-    'Sponsored Name'=>"Sponsored Name",
-    "Sponsored Files"=>"Sponsored Files"
+    'Sponsored Files'=>"Sponsored Files",
+    'Edit Sponsored'=> "Edit Sponsored",
+    'Renew File' => "Renew File",
+    'Add your notes' => "Add your notes",
+    'Send'=> "Send",
 ]
 ?>
