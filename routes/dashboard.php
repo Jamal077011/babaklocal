@@ -158,7 +158,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function(){
     Route:: get('dashboard/sponsore/sponsoreFile/edit/{id?}', 'App\Http\Controllers\Frontend\Dashboard\Sponsore\SponsoreFileController@edit')->name('sponsorefile.edit');
     Route:: put('dashboard/sponsore/sponsoreFile/update/{id?}', 'App\Http\Controllers\Frontend\Dashboard\Sponsore\SponsoreFileController@update')->name('sponsorefile.update');
 
-    // Route:: post('dashboard/sponsore/sponsoreFile/{id?}', 'App\Http\Controllers\Frontend\Dashboard\Sponsore\SponsoreFileController@destroy')->name('sponsorefile.destroy');
-    // Route:: get('dashboard/sponsore/sponsoreFile/renew_request/{id?}', 'App\Http\Controllers\Frontend\Dashboard\Sponsore\SponsoreFileController@renew_request')->name('sponsorefile.renew_request');
+    Route:: post('dashboard/sponsore/sponsoreFile/{id?}', 'App\Http\Controllers\Frontend\Dashboard\Sponsore\SponsoreFileController@destroy')->name('sponsorefile.destroy');
+    Route:: get('dashboard/sponsore/sponsoreFile/renew_request/{id?}', 'App\Http\Controllers\Frontend\Dashboard\Sponsore\SponsoreFileController@renew_request')->name('sponsorefile.renew_request');
 
   });
