@@ -1,7 +1,7 @@
 <?php 
 return [
     'Dashboard' => "الرئيسيه",
-    'Employee' => "الموظفين",
+    'Employee' => "الموظف",
     'Welcome!' => "مرحبا!",
     'My profile' => "الصفحه الشخصيه",
     'Logout' => "تسجيل خروج",
@@ -170,6 +170,18 @@ return [
     'Is The Company Regesterd in other country?' => "هل الشركة المسجلة في دولة أخرى؟",
     'Partners Countries' => "دوله الشريك",
     'Search' => "بحث",
+    'Company'=>"الشركة",
+  'Arabic Name'=>"الاسم باللغه العربيه",
+  'English Name'=>"الاسم باللغه الانجليزيه",
+  'Male'=>"ذكر",
+  'Female'=>"أنثي",
+  'Review Sponsored'=>"عرض المكفولين",
+  'Edit Employee'=>"تعديل بيانات الموظف",
+  'Sponsored Name'=>"اسم المكفول",
+  "Sponsored Files"=>'ملفات المكفولين',
+  
+    
+  
 
     ]
 ?>

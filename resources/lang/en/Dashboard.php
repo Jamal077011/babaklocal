@@ -169,5 +169,14 @@ return [
     'Is The Company Regesterd in other country?' => "Is The Company Regesterd in other country?",
     'Partners Countries' => "Partners Countries",
     'Search' => "Search",
+    'Company'=>"Company",
+    'Arabic Name'=>"Arabic Name",
+    'English Name'=>"English Name",
+    'Male'=>"Male",
+    'Female'=>"Female",
+    'Review Sponsored'=>"Review Sponsored",
+    'Edit Employee'=>"Edit Employee",
+    'Sponsored Name'=>"Sponsored Name",
+    "Sponsored Files"=>"Sponsored Files"
 ]
 ?>

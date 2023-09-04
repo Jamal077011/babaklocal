@@ -24,7 +24,7 @@
 
         <div class="">
         <div class="form-group ">
-            <label for="exampleFormControlInput1">Arabic Name</label>
+            <label for="exampleFormControlInput1">{{__('Dashboard.Arabic Name')}}</label>
             <input name="ar_name" type="text" class="form-control" id="exampleFormControlInput1" value="{{$sponsored->ar_name}}">
             @error('ar_name')
                 <small class="text-danger">{{ $message }}</small>
@@ -34,7 +34,7 @@
 
         <div class="">
             <div class="form-group ">
-                <label for="exampleFormControlInput1">English Name</label>
+                <label for="exampleFormControlInput1">{{__('Dashboard.English Name')}}</label>
                 <input name="en_name" type="text" class="form-control" id="exampleFormControlInput1" value="{{$sponsored->en_name}}">
                 @error('en_name')
                     <small class="text-danger">{{ $message }}</small>

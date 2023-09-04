@@ -8,7 +8,7 @@
 <div class="card-header">
     <div class="row align-items-center">
     <div class="col-8">
-        <h3 class="mb-0">Edit Employee</h3>
+        <h3 class="mb-0">{{__('Dashboard.Edit Employee')}}</h3>
     </div>
     <div class="col-4 text-right">
         <a href="{{ route('employee.index') }}" class="btn btn-sm btn-primary"><i class="fas fa-arrow-left"></i>{{__('Dashboard.Go back')}} </a>
@@ -23,7 +23,7 @@
 
         <div class="">
         <div class="form-group ">
-            <label for="exampleFormControlInput1">English Name</label>
+            <label for="exampleFormControlInput1">{{__('Dashboard.English Name')}}</label>
             <input name="en_name" type="text" class="form-control" id="exampleFormControlInput1" value="{{$employer->en_name}}">
             @error('en_name')
                 <small class="text-danger">{{ $message }}</small>
@@ -33,7 +33,7 @@
         <input name="user_id" value="{{ auth()->user()->id }}" type="hidden" class="form-control" id="exampleFormControlInput1" placeholder="">
         <div class="">
             <div class="form-group ">
-                <label for="exampleFormControlInput1">Arabic Name</label>
+                <label for="exampleFormControlInput1">{{__('Dashboard.Arabic Name')}}</label>
                 <input name="ar_name" type="text" class="form-control" id="exampleFormControlInput1" value="{{$employer->ar_name}}">
                 @error('ar_name')
                     <small class="text-danger">{{ $message }}</small>

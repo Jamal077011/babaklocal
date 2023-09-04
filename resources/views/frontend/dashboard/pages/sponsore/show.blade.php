@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col-md-6">
                 <h1>
-                    Sponsored
+                {{__('Dashboard.Sponsored')}} 
                 </h1>
             </div>
             <div class="col-6 text-right">
@@ -16,7 +16,7 @@
         </div>
         <div class="row mt-5">
             <div class="col-md-4">
-                <span>Sponsored Name</span>
+                <span>{{__('Dashboard.Sponsored Name')}}</span>
                 <h3>{{ $sponsore->en_name }}</h3>
             </div>
             <div class="col-md-4">
@@ -47,7 +47,7 @@
         <div class="row">
             <div class="col-md-6">
                 <h1>
-                    Sponsored Files
+                {{__('Dashboard.Sponsored Files')}}
                 </h1>
             </div>
             <div class="col-md-6 text-right">

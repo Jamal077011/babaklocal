@@ -22,7 +22,7 @@
 
         <div class="">
         <div class="form-group ">
-            <label for="exampleFormControlInput1">Arabic Name</label>
+            <label for="exampleFormControlInput1">{{__('Dashboard.Arabic Name')}}</label>
             <input name="ar_name" type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
             @error('ar_name')
                 <small class="text-danger">{{ $message }}</small>
@@ -32,7 +32,7 @@
 
         <div class="">
             <div class="form-group ">
-                <label for="exampleFormControlInput1">English Name</label>
+                <label for="exampleFormControlInput1">{{__('Dashboard.English Name')}}</label>
                 <input name="en_name" type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
                 @error('en_name')
                     <small class="text-danger">{{ $message }}</small>
@@ -42,7 +42,7 @@
         <div class=" ">
 
         <div class="form-group ">
-            <label for="exampleFormControlInput1">Employer</label>
+            <label for="exampleFormControlInput1">{{__('Dashboard.Employee')}}</label>
             <select class="form-control form-control-lg" name="employer_id"  value="{{ old('employer_id') }}"  autofocus >
                 @foreach ($employers as $employee)
                 <option value="{{ $employee->id }}">{{ $employee->en_name }}</option>
@@ -74,10 +74,10 @@
         </div>
         <div class=" ">
             <div class="form-group ">
-                <label for="exampleFormControlInput1">Gender</label>
+                <label for="exampleFormControlInput1">{{__('Dashboard.Gender')}}</label>
                 <select class="form-control form-control-lg" name="gender"  value="{{ old('gender') }}"  autofocus >
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
+                    <option value="male">{{__('Dashboard.Male')}}</option>
+                    <option value="female">{{__('Dashboard.Female')}}</option>
 
                 </select>
                 {{-- <input name="gender" type="text" required class="form-control" id="exampleFormControlInput1" placeholder=""> --}}
@@ -88,7 +88,7 @@
             </div>
             <div class=" ">
                 <div class="form-group ">
-                    <label for="exampleFormControlInput1">Nationality</label>
+                    <label for="exampleFormControlInput1">{{__('Dashboard.Nationallity')}}</label>
                     <select class="form-control form-control-lg" name="nationality_id"  value="{{ old('nationality_id') }}"  autofocus >
                         @foreach ($nationalities as $nationality)
                         <option value="{{ $nationality->id }}">{{ $nationality->name }}</option>

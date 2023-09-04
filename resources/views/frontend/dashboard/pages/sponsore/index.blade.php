@@ -13,7 +13,7 @@
                         <div class="col-6"><h3 class="">{{__('Dashboard.Sponsored')}}</h3>
                             <a href="{{route('sponsore.create')}}" class="btn btn-success"><b><i class="fas fa-plus"></i>{{__('Dashboard.Add new Sponsored')}}</b></a>
                             <li class="nav-item dropdown">
-                                <button class="btn " href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: #fff"><span>Employee</span><i class="fa-sharp fa-solid fa-arrow-down"></i></button>
+                                <button class="btn " href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: #fff"><span>{{__('Dashboard.Employee')}}</span><i class="fa-sharp fa-solid fa-arrow-down"></i></button>
                                 <div class="dropdown-menu dropdown-menu-m  dropdown-menu-right  py-0 overflow-hidden">
                                 @foreach ($employees as $employer)
                                   <div class="px-3 py-3">
@@ -64,7 +64,7 @@
                                 <th scope="col" class="sort" data-sort="budget">{{__('Dashboard.Email')}}</th>
                                 <th scope="col" class="sort" data-sort="name">{{__('Dashboard.Phone Number')}}</th>
                                 <th scope="col" class="sort" data-sort="name">{{__('Dashboard.Job')}}</th>
-                                <th scope="col" class="sort" data-sort="name">Relative</th>
+                                <th scope="col" class="sort" data-sort="name">{{__('Dashboard.Employee')}}</th>
                                 <th scope="col" class="sort" data-sort="name">{{__('Dashboard.Relative relation')}}</th>
                                 <th scope="col" class="sort" data-sort="name">{{__('Dashboard.Created At')}}</th>
                                 <th scope="col">{{__('Dashboard.Action')}}</th>
