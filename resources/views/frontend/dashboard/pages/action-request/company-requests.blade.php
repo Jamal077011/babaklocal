@@ -2,8 +2,60 @@
 @section('title', 'Company Requests')
 
 @section('content')
-<div class="container">
-    <div class="container my-5 rounded shadow-lg bg-white py-5">
+<div class="container-fluid">
+    <div class="container-fluid my-5 rounded shadow-lg bg-white py-3">
+            <div class="card-header">
+                <div class="row align-items-center">
+                    <div class="col-8">
+                        <h3 class="mb-0">Add New Request</h3>
+                    </div>
+
+                </div>
+            </div>
+            <div class="card-body">
+                <form action="" method="POST" enctype="multipart/form-data">
+                @csrf
+                    <div class="">
+                        <div class="form-group ">
+                            <label for="exampleFormControlInput1">Request Name</label>
+                            <input name="name" type="name" class="form-control" required id="exampleFormControlInput1" placeholder="">
+                            @error('password_confirmation')
+                            <small class="text-danger">{{ $message }}</small>
+                            @enderror <br>
+                        </div>
+                    </div>
+                    <div class=" ">
+                        <div class="form-group ">
+                            <label for="exampleFormControlInput1">Choose a Request</label>
+                            <select class="form-control form-control-lg" name="gender"  value="{{ old('gender') }}"  autofocus >
+                                <option >Register a new company</option>
+                                <option >Company license</option>
+                                <option >Tax documents</option>
+                                <option >Trademark registration</option>
+
+                            </select>
+                            @error('gender')
+                            <small class="text-danger">{{ $message }}</small>
+                            @enderror <br>
+                        </div>
+                        </div>
+                        <div class="">
+                            <div class="form-group ">
+                                <h2 >{{__('Dashboard.Add your notes')}}</h2>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name=note></textarea>                        
+                                @error('password_confirmation')
+                                <small class="text-danger">{{ $message }}</small>
+                                @enderror <br>
+                            </div>
+                        </div>
+
+                    <button class="btn btn-primary  ">{{__('Dashboard.Send')}}</button>
+                </form>
+            </div>
+    </div>
+
+    <div class="container-fluid my-5 rounded shadow-lg bg-white py-5">
+
         <div class="row mb-4">
             <div class=" col-md-6">
                 <h1 class="">
