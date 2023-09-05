@@ -43,7 +43,7 @@
         <div class=" ">
         <div class="form-group ">
             <label for="exampleFormControlInput1">{{__('Dashboard.Email')}}</label>
-            <input name="email" type="text" class="form-control" id="exampleFormControlInput1" value="{{$employer->email}}">
+            <input name="email" type="email" class="form-control" id="exampleFormControlInput1" value="{{$employer->email}}">
             @error('email')
                 <small class="text-danger">{{ $message }}</small>
             @enderror
