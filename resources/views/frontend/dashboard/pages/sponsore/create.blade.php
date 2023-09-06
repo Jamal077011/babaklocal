@@ -66,7 +66,7 @@
         <div class=" ">
         <div class="form-group ">
             <label for="exampleFormControlInput1">{{__('Dashboard.Phone Number')}}</label>
-            <input name="phone" type="text" class="form-control" required id="exampleFormControlInput1" placeholder="">
+            <input name="phone" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" class="form-control" required id="exampleFormControlInput1" placeholder="">
             @error('phone_number')
             <small class="text-danger">{{ $message }}</small>
             @enderror
@@ -117,7 +117,7 @@
         <div class=" ">
             <div class="form-group ">
                 <label for="exampleFormControlInput1">{{__('Dashboard.Relative relation')}}</label>
-                <input name="relative_relation" type="text" required class="form-control" id="exampleFormControlInput1" placeholder="">
+                <input name="relative_relation" type="text" required class="form-control" required id="exampleFormControlInput1" placeholder="">
                 @error('relative_relation')
                 <small class="text-danger">{{ $message }}</small>
                 @enderror <br>

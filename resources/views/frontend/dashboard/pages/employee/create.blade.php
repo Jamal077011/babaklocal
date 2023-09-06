@@ -32,7 +32,7 @@
         <div class="">
             <div class="form-group ">
                 <label for="exampleFormControlInput1">{{__('Dashboard.Arabic Name')}}</label>
-                <input name="ar_name" type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+                <input name="ar_name" type="text" class="form-control" required id="exampleFormControlInput1" placeholder="">
                 @error('ar_name')
                     <small class="text-danger">{{ $message }}</small>
                 @enderror
@@ -50,7 +50,7 @@
         <div class=" ">
         <div class="form-group ">
             <label for="exampleFormControlInput1">{{__('Dashboard.Phone Number')}}</label>
-            <input name="phone" type="text" class="form-control" required id="exampleFormControlInput1" placeholder="">
+            <input name="phone" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" class="form-control" required id="exampleFormControlInput1" placeholder="">
             @error('phone')
             <small class="text-danger">{{ $message }}</small>
             @enderror

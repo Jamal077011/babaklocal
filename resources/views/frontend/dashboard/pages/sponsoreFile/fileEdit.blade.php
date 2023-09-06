@@ -23,7 +23,7 @@
         <div class="">
             <div class="form-group ">
                 <label for="exampleFormControlInput1">{{__('Dashboard.File Name')}}</label>
-                <input name="name" type="name" class="form-control" id="exampleFormControlInput1" value="{{$file->name}}" placeholder="">
+                <input name="name" type="name" class="form-control" id="exampleFormControlInput1" required value="{{$file->name}}" placeholder="">
                 @error('password_confirmation')
                 <small class="text-danger">{{ $message }}</small>
                 @enderror <br>
@@ -32,7 +32,7 @@
         <div class=" ">
             <div class="form-group ">
                 <label for="exampleFormControlInput1">{{__('Dashboard.Start Date')}}</label>
-                <input name="start_date"  class="form-control" id="start_date" value="{{$file->start_date}}"  placeholder="">
+                <input name="start_date"  class="form-control" id="start_date" required value="{{$file->start_date}}"  placeholder="">
                 @error('password_confirmation')
                 <small class="text-danger">{{ $message }}</small>
                 @enderror <br>
@@ -41,7 +41,7 @@
         <div class="">
             <div class="form-group ">
                 <label for="exampleFormControlInput1">{{__('Dashboard.End Date')}}</label>
-                <input name="end_date"  class="form-control" id="end_date" value="{{$file->end_date}}" placeholder="">
+                <input name="end_date"  class="form-control" id="end_date" required value="{{$file->end_date}}" placeholder="">
                 @error('password_confirmation')
                 <small class="text-danger">{{ $message }}</small>
                 @enderror <br>
@@ -50,7 +50,7 @@
         <div class=" ">
             <div class="form-group ">
                 <label for="exampleFormControlInput1">{{__('Dashboard.File')}}</label>
-                <input name="file" type="file" class="form-control" id="exampleFormControlInput1" placeholder="">
+                <input name="file" type="file" class="form-control"  required id="exampleFormControlInput1" placeholder="">
                 <img src="{{ asset($file->filename) }}">
                 @error('password_confirmation')
                 <small class="text-danger">{{ $message }}</small>

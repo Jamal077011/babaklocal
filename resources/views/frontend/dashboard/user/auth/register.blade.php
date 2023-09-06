@@ -192,7 +192,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="partners">{{ __('Dashboard.Number of partners') }}</label>
-                                        <input id="partners" type="text" class="form-control "onkeyup="addFields()" name="partners" value="{{ old('partners') }}" required autocomplete="partners" autofocus>
+                                        <input id="partners" type="number" class="form-control "onkeyup="addFields()" name="partners" value="{{ old('partners') }}" required autocomplete="partners" autofocus>
                                         <div id="PartnersError"> </div>
 
                                         {{-- <a href="#" id="filldetails" onclick="addFields()">Fill Details</a> --}}

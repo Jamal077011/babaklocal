@@ -23,7 +23,7 @@
                 <div class="">
                     <div class="form-group ">
                         <label for="name">{{__('Dashboard.File Name')}}</label>
-                        <input name="name" type="text" class="form-control" id="name" value="{{$file->name}}" placeholder="">
+                        <input name="name" type="text" class="form-control" id="name" required value="{{$file->name}}" placeholder="">
                         @error('name')
                             <small class="text-danger">{{ $message }}</small>
                         @enderror <br>
@@ -32,7 +32,7 @@
                 <div class=" ">
                     <div class="form-group ">
                         <label for="start_date">{{__('Dashboard.Start Date')}}</label>
-                        <input name="start_date" class="form-control" value="{{$file->start_date}}" id="start_date" placeholder="">
+                        <input name="start_date" class="form-control" value="{{$file->start_date}}" required id="start_date" placeholder="">
                         @error('start_date')
                         <small class="text-danger">{{ $message }}</small>
                         @enderror <br>
@@ -41,7 +41,7 @@
                 <div class="">
                     <div class="form-group ">
                         <label for="end_date">{{__('Dashboard.End Date')}}</label>
-                        <input name="end_date"  class="form-control" value="{{$file->end_date}}" id="end_date" placeholder="">
+                        <input name="end_date"  class="form-control" value="{{$file->end_date}}" required id="end_date" placeholder="">
                         @error('end_date')
                         <small class="text-danger">{{ $message }}</small>
                         @enderror <br>
@@ -50,7 +50,7 @@
                 <div class=" ">
                     <div class="form-group ">
                         <label for="file">{{__('Dashboard.File')}}</label>
-                        <input name="file" type="file" class="form-control" value="{{ old('file')}}" id="file" placeholder="">
+                        <input name="file" type="file" class="form-control" required value="{{ old('file')}}" id="file" placeholder="">
                         <img src="{{ asset($file->filename) }}">
                         @error('file')
                         <small class="text-danger">{{ $message }}</small>

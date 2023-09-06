@@ -49,7 +49,7 @@
                             </div>
                         </div>
 
-                    <button class="btn btn-primary  ">{{__('Dashboard.Send')}}</button>
+                    <button class="btn btn-primary disable  ">{{__('Dashboard.Send')}}</button>
                 </form>
             </div>
     </div>

@@ -24,7 +24,7 @@
         <div class="">
         <div class="form-group ">
             <label for="exampleFormControlInput1">{{__('Dashboard.English Name')}}</label>
-            <input name="en_name" type="text" class="form-control" id="exampleFormControlInput1" value="{{$employer->en_name}}">
+            <input name="en_name" type="text" class="form-control" id="exampleFormControlInput1" required value="{{$employer->en_name}}">
             @error('en_name')
                 <small class="text-danger">{{ $message }}</small>
             @enderror
@@ -34,7 +34,7 @@
         <div class="">
             <div class="form-group ">
                 <label for="exampleFormControlInput1">{{__('Dashboard.Arabic Name')}}</label>
-                <input name="ar_name" type="text" class="form-control" id="exampleFormControlInput1" value="{{$employer->ar_name}}">
+                <input name="ar_name" type="text" class="form-control" id="exampleFormControlInput1" required value="{{$employer->ar_name}}">
                 @error('ar_name')
                     <small class="text-danger">{{ $message }}</small>
                 @enderror
@@ -43,7 +43,7 @@
         <div class=" ">
         <div class="form-group ">
             <label for="exampleFormControlInput1">{{__('Dashboard.Email')}}</label>
-            <input name="email" type="email" class="form-control" id="exampleFormControlInput1" value="{{$employer->email}}">
+            <input name="email" type="email" class="form-control" id="exampleFormControlInput1" required value="{{$employer->email}}">
             @error('email')
                 <small class="text-danger">{{ $message }}</small>
             @enderror
@@ -52,7 +52,7 @@
         <div class=" ">
         <div class="form-group ">
             <label for="exampleFormControlInput1">{{__('Dashboard.Phone Number')}}</label>
-            <input name="phone" type="text" class="form-control" id="exampleFormControlInput1" value="{{$employer->phone}}">
+            <input name="phone" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" class="form-control" id="exampleFormControlInput1" required value="{{$employer->phone}}">
             @error('phone')
             <small class="text-danger">{{ $message }}</small>
             @enderror

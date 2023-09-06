@@ -20,7 +20,7 @@
                 <div class="">
                     <div class="form-group ">
                         <h2 >{{__('Dashboard.Add your notes')}}</h2>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name=note></textarea>                        @error('password_confirmation')
+                        <textarea class="form-control" id="exampleFormControlTextarea1" required rows="3" name=note></textarea>                        @error('password_confirmation')
                         <small class="text-danger">{{ $message }}</small>
                         @enderror <br>
                     </div>
