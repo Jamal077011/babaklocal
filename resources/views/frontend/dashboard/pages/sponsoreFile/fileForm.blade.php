@@ -63,11 +63,11 @@
 <script>
     $('#start_date').datepicker({
         uiLibrary: 'bootstrap4',
-        format: "dd-mm-yyyy",
+        format: "yyyy-mm-dd",
     });
     $('#end_date').datepicker({
         uiLibrary: 'bootstrap4',
-        format: "dd-mm-yyyy",
+        format: "yyyy-mm-dd",
     });
 </script>
 @endsection
