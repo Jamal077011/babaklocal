@@ -62,14 +62,8 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
-          <h1>All your Company Requirements in one place.</h1>
-          <h6 class="my-4">A new door to the future that BABAK open it
-for you to preparing everything your company needs
-anywhere in the United Arab Emirates.
-A full team of experts always helps you
-to establish and manage your company in the UAE 
-through a unique and distinctive set of services
-Get ready for a distinguished future for your company
+          <h1>All your Company requirements in one place.</h1>
+          <h6 class="my-4">A new door to the future that BABAK opens for you to prepare everything your company needs anywhere in the United Arab Emirates. An entire team of experts always helps you to establish and manage your company in the UAE through a unique and distinctive set of services. Get ready for a distinguished future for your company.
 </h2>
           <div class="d-flex justify-content-center justify-content-lg-start">
             <button type="button" class="btn-get-started scrollto" data-bs-toggle="modal" data-bs-target="#exampleModal">Get Started</button>
@@ -164,8 +158,7 @@ Get ready for a distinguished future for your company
                 <p class="fst-italic">
                   Immediate notification of all changes that occur to your company, employees or their relatives.
                   <br>
-                  It makes it easy for you to keep track of the periodic details of your company 
-Detailed reports about Files, Employees K Relatives
+                It makes it easy for you to keep track of the periodic details of your company's detailed reports about files, employees, and relatives.
 
                 </p>
                 <ul>
@@ -330,21 +323,10 @@ Electronic Wallet.
 
           </div>
           <div class="col-md-6">
-            <h3>BABAK is more than a company 
-              incorporation site
+            <h3>BABAK will be with you from your beginning 
               </h3>
             <p class="mt-5">
-              BABAK is not just a company incorporation site
-              When you subscribe to BABAK, 
-              you can enjoy a perfect system for your company
-              It begins with establishing, 
-              incorporating and ending government procedures
-              Through an integrated system for managing employee
-              and sponsored files
-              And provide legal advice
-              And create an electronic wallet for the company
-              Manage customers, suppliers and all company files
-              BABAK is with you from start to finish 
+              BABAK is not just a company incorporation site When you subscribe to BABAK, you can enjoy a perfect system for your company It begins with establishing, incorporating, and ending government procedures Through an integrated system for managing employee and sponsored files and providing legal advice and create an electronic wallet for the company customers management, suppliers and all company files.
               
             </p>
             <br>
@@ -414,7 +396,9 @@ Electronic Wallet.
     
             <div class="section-title">
               <h2>Services</h2>
-              <p class="mx-6">BABAK Corporate Management System offers you many and varied services It helps you create and establish the company and finalize the government procedures An integrated system for managing employees' and sponsors' files Managing all company files In addition to the company's e-wallet and legal advice.</p>
+              <p class="mx-6"> BABAK corporate management system offers many and varied services. It helps you create and establish your company, as well as finalize government procedures.
+An integrated system for managing the files of staff and sponsors Managing all company files in addition to the company's e-wallet and legal advice.
+.</p>
             </div>
     
             <div class="row">
@@ -422,7 +406,7 @@ Electronic Wallet.
                 <div class="icon-box">
                   <div class="icon"><i class="fa-solid fa-building fa-2xl"></i></div>
                   <h4>Setting up & Registering Companies</h4>
-                  <p>BABAK assists you in all company establishment procedures and provides you with periodic consulting to establish and start your company on solid ground</p>
+                  <p>BABAK assists you in all company establishment procedures and provides you with periodic consulting to establish and start your company on solid ground.</p>
                 </div>
               </div>
     
@@ -438,7 +422,7 @@ Electronic Wallet.
                 <div class="icon-box">
                   <div class="icon"><i class="fa-solid fa-building-user fa-2xl"></i></div>
                   <h4>Managing Employees Files</h4>
-                  <p>Organizing your company's personnel and human resources files is very important. It helps you evaluate employees easily and know all the details about the process of working within the company</p>
+                  <p>Organizing your company's personnel and human resources files is very important. It helps you evaluate employees easily and know all the details about the process of working within the company.</p>
                 </div>
               </div>
     
@@ -446,7 +430,7 @@ Electronic Wallet.
                 <div class="icon-box">
                   <div class="icon"><i class="fa-solid fa-users fa-2xl"></i></div>
                   <h4>Managing Relatives Files</h4>
-                  <p>It is important to follow the files of the sponsored and the employees' relatives to see their legal position within the UAE Through BABAK you can easily follow the sponsored files</p>
+                  <p>It is important to follow the files of the sponsored and the employees' relatives to see their legal position within the UAE Through BABAK you can easily follow the sponsored files.</p>
                 </div>
               </div>
     
