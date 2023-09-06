@@ -126,7 +126,7 @@
                             <div v-show="currentstep == 1">
                                 <div class="form-group ">
                                     <label for="name">{{ __('Dashboard.Name') }}</label>
-                                    <input id="name" onkeyup="laststep()" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                    <input id="name" onkeyup="laststep()" type="text" required class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
                                     @error('name')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>

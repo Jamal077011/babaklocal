@@ -46,7 +46,7 @@ class EmployerController extends Controller
     public function store(Request $request)
     {
         // $user_id = auth()->user()->id;
-        
+  
         $employer = Employer::create($request->all());
 
         return redirect()->route('employee.index')->with('success', 'Employee created successfully.');

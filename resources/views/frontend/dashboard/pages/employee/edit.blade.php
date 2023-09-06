@@ -52,7 +52,7 @@
         <div class=" ">
         <div class="form-group ">
             <label for="exampleFormControlInput1">{{__('Dashboard.Phone Number')}}</label>
-            <input name="phone" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" class="form-control" id="exampleFormControlInput1" required value="{{$employer->phone}}">
+            <input name="phone" type="text" pattern="[0-9]+" class="form-control" id="exampleFormControlInput1" required value="{{$employer->phone}}">
             @error('phone')
             <small class="text-danger">{{ $message }}</small>
             @enderror
