@@ -3,22 +3,13 @@
         'name' => 'laravel/laravel',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'a247d07224b483ea8594f228f93349e6edeb4a51',
+        'reference' => '097c87b3a922a4c5f331ab09a153db73cb6dc7c5',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
         'dev' => true,
     ),
     'versions' => array(
-        'barryvdh/laravel-debugbar' => array(
-            'pretty_version' => 'v3.8.1',
-            'version' => '3.8.1.0',
-            'reference' => 'aff3235fecb4104203b1e62c32239c56530eee32',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../barryvdh/laravel-debugbar',
-            'aliases' => array(),
-            'dev_requirement' => true,
-        ),
         'bmatovu/multi-auth' => array(
             'pretty_version' => 'v12.0.0',
             'version' => '12.0.0.0',
@@ -418,7 +409,7 @@
         'laravel/laravel' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'a247d07224b483ea8594f228f93349e6edeb4a51',
+            'reference' => '097c87b3a922a4c5f331ab09a153db73cb6dc7c5',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -531,15 +522,6 @@
             'install_path' => __DIR__ . '/../livewire/livewire',
             'aliases' => array(),
             'dev_requirement' => false,
-        ),
-        'maximebf/debugbar' => array(
-            'pretty_version' => 'v1.18.2',
-            'version' => '1.18.2.0',
-            'reference' => '17dcf3f6ed112bb85a37cf13538fd8de49f5c274',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../maximebf/debugbar',
-            'aliases' => array(),
-            'dev_requirement' => true,
         ),
         'mcamara/laravel-localization' => array(
             'pretty_version' => 'V1.8.0',
