@@ -5,7 +5,7 @@
 <div class="container my-9">
   <div class="row ">
     <div class="col-md-4" style="text-align: -webkit-center;">
-      <div onclick="location.href='{{ route('dashboard.action_request.company_requests') }}';" class="card" style="width: 17rem; cursor: pointer;">
+      <div onclick="location.href='{{ route('company_requests.index') }}';" class="card" style="width: 17rem; cursor: pointer;">
         <div class="thumbnail text-center mt-5">
           <img src="{{ asset("frontend/assets/img/Asset_11.png")}}" class="thumb" alt="...">
         </div>
@@ -15,7 +15,7 @@
       </div>
     </div>
     <div class="col-md-4" style="text-align: -webkit-center;">
-      <div onclick="location.href='{{ route('dashboard.action_request.employee_requests') }}';" class="card" style="width: 17rem; cursor: pointer;">
+      <div onclick="location.href='{{ route('employee_requests.index') }}';" class="card" style="width: 17rem; cursor: pointer;">
         <div class="thumbnail text-center mt-5">
           <img src="{{ asset("frontend/assets/img/Asset_12.png")}}" class="thumb" alt="...">
         </div>
@@ -25,7 +25,7 @@
       </div>
     </div>
     <div class="col-md-4" style="text-align: -webkit-center;">
-      <div onclick="location.href='{{ route('dashboard.action_request.sponserd_requests') }}';" class="card" style="width: 17rem; cursor: pointer;">
+      <div onclick="location.href='{{ route('sponsore_requests.index') }}';" class="card" style="width: 17rem; cursor: pointer;">
         <div class="thumbnail text-center mt-5">
           <img src="{{ asset("frontend/assets/img/Asset_13.png")}}" class="thumb" alt="...">
         </div>

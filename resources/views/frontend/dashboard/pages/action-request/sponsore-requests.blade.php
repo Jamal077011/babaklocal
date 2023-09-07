@@ -13,7 +13,7 @@
             </div>
         </div>
         <div class="card-body">
-            <form action="" method="POST" enctype="multipart/form-data">
+            {{-- <form action="" method="POST" enctype="multipart/form-data">
             @csrf
                 <div class="">
                     <div class="form-group ">
@@ -23,34 +23,53 @@
                         <small class="text-danger">{{ $message }}</small>
                         @enderror <br>
                     </div>
-                </div>
+                </div> --}}
                 <div class=" ">
                     <div class="form-group ">
                         <label for="exampleFormControlInput1">Choose a Request</label>
-                        <select class="form-control form-control-lg" name="gender"  value="{{ old('gender') }}"  autofocus >
-                            <option >Reunification request</option>
-                            <option >Driving License</option>
-                            <option >Renewal of residence</option>
+                        <div class="btn-group" role="group">
+                            <button id="btnGroupDrop1" class="btn btn-sm btn-outline-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">choose</button>
+                            <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                            @foreach ($sponsorerequests as $sponsorerequest)
+                            <a href="{{ route('sponsore_requests.show', $sponsorerequest->id) }}" class="dropdown-item">{{ $sponsorerequest->name }}</a></option>
+                            @endforeach
+
                         </select>
                         @error('gender')
                         <small class="text-danger">{{ $message }}</small>
                         @enderror <br>
                     </div>
                     </div>
-                    <div class=" ">
+                    </div>
+
+
+                {{-- <div class=" ">
+                    <div class="form-group ">
+                        <label for="exampleFormControlInput1">Choose a Request</label>
+                        <select class="form-control form-control-lg" name="gender"  value="{{ old('gender') }}"  autofocus >
+                            @foreach ($sponsorerequests as $sponsorerequest)
+                            <option value="{{ $sponsorerequest->id }}">{{ $sponsorerequest->name }}</option>
+                            @endforeach
+                        </select>
+                        @error('gender')
+                        <small class="text-danger">{{ $message }}</small>
+                        @enderror <br>
+                    </div>
+                    </div> --}}
+                    {{-- <div class=" ">
                         <div class="form-group ">
                             <label for="exampleFormControlInput1">Choose a Sponsored</label>
                             <select class="form-control form-control-lg" name="gender"  value="{{ old('gender') }}"  autofocus >
-                                <option >Sponsored 1</option>
-                                <option >Sponsored 2 </option>
-                                <option >Sponsored 3 </option>
+                                @foreach ($sponsored as $sponsore)
+                                <option value="{{ $sponsore->id }}">{{ $sponsore->en_name }}</option>
+                                @endforeach
                             </select>
                             @error('gender')
                             <small class="text-danger">{{ $message }}</small>
                             @enderror <br>
                         </div>
-                        </div>
-                    <div class="">
+                        </div> --}}
+                    {{-- <div class="">
                         <div class="form-group ">
                             <h2 >{{__('Dashboard.Add your notes')}}</h2>
                             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name=note></textarea>                        
@@ -60,8 +79,8 @@
                         </div>
                     </div>
 
-                <button class="btn btn-primary disable ">{{__('Dashboard.Send')}}</button>
-            </form>
+                <button class="btn btn-primary disable ">{{__('Dashboard.Next')}}</button>
+            </form> --}}
         </div>
 </div>
     <div class="container-fluid my-5 rounded shadow-lg bg-white py-5">

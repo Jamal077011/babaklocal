@@ -13,7 +13,7 @@
             </div>
         </div>
         <div class="card-body">
-            <form action="" method="POST" enctype="multipart/form-data">
+            {{-- <form action="" method="POST" enctype="multipart/form-data">
             @csrf
                 <div class="">
                     <div class="form-group ">
@@ -23,34 +23,52 @@
                         <small class="text-danger">{{ $message }}</small>
                         @enderror <br>
                     </div>
-                </div>
+                </div> --}}
                 <div class=" ">
                     <div class="form-group ">
                         <label for="exampleFormControlInput1">Choose a Request</label>
-                        <select class="form-control form-control-lg" name="gender"  value="{{ old('gender') }}"  autofocus >
-                            <option >Register a new employee</option>
-                            <option >Driving License</option>
-                            <option >Renewal of residence</option>
+                        <div class="btn-group" role="group">
+                            <button id="btnGroupDrop1" class="btn btn-sm btn-outline-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">choose</button>
+                            <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                            @foreach ($employeerequests as $employeerequest)
+                            <a href="{{ route('employee_requests.show', $employeerequest->id) }}" class="dropdown-item">{{ $employeerequest->name }}</a></option>
+                            @endforeach
+
                         </select>
                         @error('gender')
                         <small class="text-danger">{{ $message }}</small>
                         @enderror <br>
                     </div>
                     </div>
-                    <div class=" ">
+                    </div>
+
+                {{-- <div class=" ">
+                    <div class="form-group ">
+                        <label for="exampleFormControlInput1">Choose a Request</label>
+                        <select class="form-control form-control-lg" name="gender"  value="{{ old('gender') }}"  autofocus >
+                            @foreach ($employeerequests as $employeerequest)
+                            <option value="{{ $employeerequest->id }}">{{ $employeerequest->name }}</option>
+                            @endforeach
+                        </select>
+                        @error('gender')
+                        <small class="text-danger">{{ $message }}</small>
+                        @enderror <br>
+                    </div>
+                    </div> --}}
+                    {{-- <div class=" ">
                         <div class="form-group ">
                             <label for="exampleFormControlInput1">Choose an employee</label>
                             <select class="form-control form-control-lg" name="gender"  value="{{ old('gender') }}"  autofocus >
-                                <option >Employee 1</option>
-                                <option >Employee 2 </option>
-                                <option >Employee 3 </option>
+                                @foreach ($employees as $employee)
+                                <option value="{{ $employee->id }}">{{ $employee->en_name }}</option>
+                                @endforeach
                             </select>
                             @error('gender')
                             <small class="text-danger">{{ $message }}</small>
                             @enderror <br>
                         </div>
-                        </div>
-                    <div class="">
+                        </div> --}}
+                    {{-- <div class="">
                         <div class="form-group ">
                             <h2 >{{__('Dashboard.Add your notes')}}</h2>
                             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name=note></textarea>                        
@@ -60,8 +78,8 @@
                         </div>
                     </div>
 
-                <button class="btn btn-primary disable  ">{{__('Dashboard.Send')}}</button>
-            </form>
+                <button class="btn btn-primary disable  ">{{__('Dashboard.Next')}}</button>
+            </form> --}}
         </div>
 </div>
     <div class="container-fluid my-5 rounded shadow-lg bg-white py-5">

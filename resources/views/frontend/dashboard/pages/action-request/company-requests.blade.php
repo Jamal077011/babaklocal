@@ -13,9 +13,9 @@
                 </div>
             </div>
             <div class="card-body">
-                <form action="" method="POST" enctype="multipart/form-data">
-                @csrf
-                    <div class="">
+                {{-- <form action="{{route('company_requests.show', $companyrequest->id)}}" method="POST" enctype="multipart/form-data">
+                @csrf --}}
+                    {{-- <div class="">
                         <div class="form-group ">
                             <label for="exampleFormControlInput1">Request Name</label>
                             <input name="name" type="name" class="form-control" required id="exampleFormControlInput1" placeholder="">
@@ -23,15 +23,16 @@
                             <small class="text-danger">{{ $message }}</small>
                             @enderror <br>
                         </div>
-                    </div>
+                    </div> --}}
                     <div class=" ">
                         <div class="form-group ">
                             <label for="exampleFormControlInput1">Choose a Request</label>
-                            <select class="form-control form-control-lg" name="gender"  value="{{ old('gender') }}"  autofocus >
-                                <option >Register a new company</option>
-                                <option >Company license</option>
-                                <option >Tax documents</option>
-                                <option >Trademark registration</option>
+                            <div class="btn-group" role="group">
+                                <button id="btnGroupDrop1" class="btn btn-sm btn-outline-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">choose</button>
+                                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                                @foreach ($companyrequests as $companyrequest)
+                                <a href="{{ route('company_requests.show', $companyrequest->id) }}" class="dropdown-item">{{ $companyrequest->name }}</a></option>
+                                @endforeach
 
                             </select>
                             @error('gender')
@@ -39,7 +40,10 @@
                             @enderror <br>
                         </div>
                         </div>
-                        <div class="">
+                        </div>
+                        {{-- <button href='{{route('company_requests.show', $companyrequest->id)}}' class="btn btn-primary ">{{__('Dashboard.Next')}}</button> --}}
+                        {{-- </form> --}}
+                        {{-- <div class="">
                             <div class="form-group ">
                                 <h2 >{{__('Dashboard.Add your notes')}}</h2>
                                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name=note></textarea>                        
@@ -47,10 +51,9 @@
                                 <small class="text-danger">{{ $message }}</small>
                                 @enderror <br>
                             </div>
-                        </div>
+                        </div> --}}
 
-                    <button class="btn btn-primary disable  ">{{__('Dashboard.Send')}}</button>
-                </form>
+                {{-- </form> --}}
             </div>
     </div>
 

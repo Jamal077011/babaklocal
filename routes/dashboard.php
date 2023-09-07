@@ -60,15 +60,15 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function(){
     })->name('dashboard.action-request');
 
 
-    Route::get('dashboard/action_request/company_requests',function(){
-      return view('/frontend/dashboard/pages/action-request/company-requests');
-    })->name('dashboard.action_request.company_requests');
-    Route::get('dashboard/action_request/employee_requests',function(){
-      return view('/frontend/dashboard/pages/action-request/employee-requests');
-    })->name('dashboard.action_request.employee_requests');
-    Route::get('dashboard/action_request/sponserd_requests',function(){
-      return view('/frontend/dashboard/pages/action-request/sponserd-requests');
-    })->name('dashboard.action_request.sponserd_requests');
+    // Route::get('dashboard/action_request/company_requests',function(){
+    //   return view('/frontend/dashboard/pages/action-request/company-requests');
+    // })->name('dashboard.action_request.company_requests');
+    // Route::get('dashboard/action_request/employee_requests',function(){
+    //   return view('/frontend/dashboard/pages/action-request/employee-requests');
+    // })->name('dashboard.action_request.employee_requests');
+    // Route::get('dashboard/action_request/sponserd_requests',function(){
+    //   return view('/frontend/dashboard/pages/action-request/sponserd-requests');
+    // })->name('dashboard.action_request.sponserd_requests');
 
     Route::get('dashboard/wallet',function(){
       return view('/frontend/dashboard/pages/wallet/index');
@@ -160,5 +160,11 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function(){
 
     Route:: post('dashboard/sponsore/sponsoreFile/{id?}', 'App\Http\Controllers\Frontend\Dashboard\Sponsore\SponsoreFileController@destroy')->name('sponsorefile.destroy');
     Route:: get('dashboard/sponsore/sponsoreFile/renew_request/{id?}', 'App\Http\Controllers\Frontend\Dashboard\Sponsore\SponsoreFileController@renew_request')->name('sponsorefile.renew_request');
+
+
+    Route::resource('dashboard/company_requests', 'App\Http\Controllers\Frontend\Dashboard\Requests\CompanyRequestsController');   
+    Route::resource('dashboard/employee_requests', 'App\Http\Controllers\Frontend\Dashboard\Requests\EmployeeRequestsController');   
+    Route::resource('dashboard/sponsore_requests', 'App\Http\Controllers\Frontend\Dashboard\Requests\SponsoreRequestsController');   
+
 
   });

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend\Dashboard;
 use App\Http\Controllers\Controller;
 use App\Models\Dashboard\Company;
 use App\Models\Dashboard\CompanyFile;
+use App\Models\Dashboard\CompanyRequests;
 use Illuminate\Http\Request;
 
 class CompanyController extends Controller
@@ -18,8 +19,10 @@ class CompanyController extends Controller
     public function index()
     {
         $companies = Company::with('user', 'country')->where('user_id', auth()->user()->id)->orderBy('created_at', 'desc')->paginate(5);
+        $form = CompanyRequests::findOrFail(1)->content;
+        // dd($form);
 
-        return view('frontend.dashboard.pages.company.index', compact('companies'));
+        return view('frontend.dashboard.pages.company.index', compact('companies', 'form'));
     }
 
     /**

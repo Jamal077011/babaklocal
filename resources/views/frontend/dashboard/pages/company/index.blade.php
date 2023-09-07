@@ -48,10 +48,17 @@
     </tbody>
   </table>
   <div class="justify-content-center m-2">{{ $companies->links()}}</div>
+
     
 </div>
 
 </div>
+</div>
+<div>
+  {{-- <div>
+  {!! html_entity_decode($form) !!}
+  </div> --}}
+  
 </div>
 
 @endsection
