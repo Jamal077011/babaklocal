@@ -3,12 +3,18 @@
 namespace App\Http\Controllers\Frontend\Dashboard\Employees;
 
 use App\Http\Controllers\Controller;
+use App\Models\Admin;
 use App\Models\Dashboard\Company;
 use App\Models\Dashboard\Employer;
 use App\Models\Dashboard\EmployerFile;
 use App\Models\Dashboard\jobTitle;
 use App\Models\Dashboard\Nationality;
+use App\Models\User;
+use App\Notifications\addEmployee;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Notification;
+
+
 
 class EmployerController extends Controller
 {
@@ -48,6 +54,16 @@ class EmployerController extends Controller
         // $user_id = auth()->user()->id;
   
         $employer = Employer::create($request->all());
+        // $employer->notify(new addEmployee($employer));
+        // $users = User::all();
+       
+         $admins=Admin::all();
+        
+        Notification::send($admins,new addEmployee($employer));
+              
+      
+
+
 
         return redirect()->route('employee.index')->with('success', 'Employee created successfully.');
     }
