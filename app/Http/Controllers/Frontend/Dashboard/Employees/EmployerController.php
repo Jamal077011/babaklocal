@@ -12,6 +12,7 @@ use App\Models\Dashboard\Nationality;
 use App\Models\User;
 use App\Notifications\addEmployee;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Notification;
 
 
@@ -58,7 +59,8 @@ class EmployerController extends Controller
         // $users = User::all();
        
          $admins=Admin::all();
-        
+         $user=User::find(Auth::user()->id);
+        Notification::send($user,new addEmployee($employer));
         Notification::send($admins,new addEmployee($employer));
               
       

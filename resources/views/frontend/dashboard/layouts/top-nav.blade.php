@@ -96,30 +96,38 @@
             <div class="dropdown-menu dropdown-menu-xl  dropdown-menu-right  py-0 overflow-hidden">
               <!-- Dropdown header -->
               <div class="px-3 py-3">
-                <h6 class="text-sm text-muted m-0">You have <strong class="text-primary">1</strong> notifications.</h6>
+                <h6 class="text-sm text-muted m-0">You have <strong class="text-primary"> {{auth()->user()->unreadNotifications->count()}}</strong> notifications.</h6>
               </div>
               <!-- List group -->
+              @foreach ( auth()->user()->unreadNotifications as $notification)
+                         
+                    
               <div class="list-group list-group-flush">
-                <a href="#!" class="list-group-item list-group-item-action">
-                  <div class="row align-items-center">
+             <a href="{{ route('employee.show', $notification->data['newemployee_id']) }}" class="list-group-item list-group-item-action"> 
+              
+                <div class="row align-items-center">
                     <div class="col-auto">
                       <!-- Avatar -->
-                      <img alt="Image " src='{{ asset("website\assets\img\r.png") }}' class="avatar rounded-circle">
+                      <img alt="Image placeholder" src="../assets/img/theme/team-1.jpg" class="avatar rounded-circle">
                     </div>
-                    <div class="col ml--2">
+                    <div class="col ml--2" style="background-color:#d3d3d3;">
                       <div class="d-flex justify-content-between align-items-center">
                         <div>
-                          <h4 class="mb-0 text-sm">John Snow</h4>
+                          
+                         <h4 class="mb-0 text-sm"></h4>
                         </div>
                         <div class="text-right text-muted">
-                          <small>2 hrs ago</small>
+                    
                         </div>
                       </div>
-                      <p class="text-sm mb-0">Let's meet at Starbucks at 11:30. Wdyt?</p>
+                      <p class="text-sm mb-0">{{ $notification->data['action'] }} </p>
+                      <p class="text-sm mb-0"> {{ $notification->created_at }} </p>
+                     
                     </div>
                   </div>
                 </a>
               </div>
+              @endforeach 
               <!-- View all -->
               <a href="#!" class="dropdown-item text-center text-primary font-weight-bold py-3">View all</a>
             </div>
