@@ -13,6 +13,7 @@ use App\Models\User;
 use App\Notifications\addEmployee;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Notification;
 
 
@@ -60,9 +61,11 @@ class EmployerController extends Controller
        
          $admins=Admin::all();
          $user=User::find(Auth::user()->id);
+       
         Notification::send($user,new addEmployee($employer));
-        Notification::send($admins,new addEmployee($employer));
-              
+        // Notification::send($admins,new addEmployee($employer));
+      
+
       
 
 
@@ -74,11 +77,19 @@ class EmployerController extends Controller
      * Display the specified resource.
      */
     public function show(string $id)
+    
     {
+        $my= $id;
+        
         $employer = Employer::findOrFail($id);
-      //  $data = json_decode($company->company_data, true);
-        //$files = CompanyFile::where('company_id', $id)->orderBy('created_at', 'desc')->get();
+   
+     
         $files = EmployerFile::where('employer_id', $id)->orderBy('created_at', 'desc')->get();
+    
+        // $getID= DB::table('notifications')->where('data->newemployee_id',$id)->pluck('id');
+        // DB::table('notifications')->where('id', $getID)->update(['read_at'=>now()]);
+
+
 
         return view('frontend.dashboard.pages.employee.show', compact('employer', 'files'));
     }
