@@ -15,6 +15,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Notification;
+use Illuminate\Notifications\Notifiable;
 
 
 
@@ -63,7 +64,7 @@ class EmployerController extends Controller
          $user=User::find(Auth::user()->id);
        
         Notification::send($user,new addEmployee($employer));
-        // Notification::send($admins,new addEmployee($employer));
+        Notification::send($admins,new addEmployee($employer));
       
 
       
@@ -79,16 +80,20 @@ class EmployerController extends Controller
     public function show(string $id)
     
     {
-        $my= $id;
+       
         
         $employer = Employer::findOrFail($id);
    
-     
         $files = EmployerFile::where('employer_id', $id)->orderBy('created_at', 'desc')->get();
-    
-        // $getID= DB::table('notifications')->where('data->newemployee_id',$id)->pluck('id');
-        // DB::table('notifications')->where('id', $getID)->update(['read_at'=>now()]);
+       
 
+
+        // $getID= DB::table('notifications')->where('data->newemployee_id',12)->pluck('id');
+  
+        // DB::table('notifications')->where('id', $getID)->update(['read_at'=>now()]);
+        
+      
+         auth()->user()->unreadNotifications->markAsRead();
 
 
         return view('frontend.dashboard.pages.employee.show', compact('employer', 'files'));

@@ -29,7 +29,10 @@ Route::get('/', function () {
 Route::get('test/', 'App\Http\Controllers\testController@index')->name('test.index');
 Route::post('test/', 'App\Http\Controllers\testController@add')->name('test.add');
 
-
+Route::get('/markAsRead', function(){
+    auth()->user()->unreadNotifications->markAsRead();
+    return redirect()->back();
+    });
 
 
 /*
