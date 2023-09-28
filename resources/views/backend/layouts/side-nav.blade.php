@@ -43,6 +43,12 @@
               <span class="nav-link-text">{{__('Admin.Admin aria')}}</span>
             </a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link " href="" role="button">
+              <i class="fa-solid fa-table fa-2xl"></i>
+              <span class="nav-link-text">Forms</span>
+            </a>
+          </li>
           <ul class="collapse show" id="collapse-15" style="">
             <li class="nav-item "><a class="nav-link" href="{{ route('admin.backup') }}"><i class="fas fa-hdd"></i>{{__('Admin.Backup Manager')}}</a></li>
             </ul>

@@ -19,10 +19,10 @@ class CompanyController extends Controller
     public function index()
     {
         $companies = Company::with('user', 'country')->where('user_id', auth()->user()->id)->orderBy('created_at', 'desc')->paginate(5);
-        $form = CompanyRequests::findOrFail(1)->content;
+        // $form = CompanyRequests::findOrFail(1)->content;
         // dd($form);
 
-        return view('frontend.dashboard.pages.company.index', compact('companies', 'form'));
+        return view('frontend.dashboard.pages.company.index', compact('companies'));
     }
 
     /**
