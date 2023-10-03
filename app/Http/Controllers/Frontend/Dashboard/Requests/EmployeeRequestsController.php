@@ -14,10 +14,9 @@ class EmployeeRequestsController extends Controller
      */
     public function index()
     {
-        $employeerequests = EmployeeRequests::all();
-        $employees = Employer::where('user_id', auth()->user()->id)->orderBy('id')->get();
 
-        return view('frontend.dashboard.pages.action-request.employee-requests', compact('employeerequests', 'employees'));
+
+        return view('frontend.dashboard.pages.action-request.employee-requests');
     }
 
     /**
@@ -41,8 +40,7 @@ class EmployeeRequestsController extends Controller
      */
     public function show(string $id)
     {
-        $employeerequest = EmployeeRequests::findOrFail($id);
-        return view('frontend.dashboard.pages.action-request.employee-request-form', compact('employeerequest'));
+        return view('frontend.dashboard.pages.action-request.employee-request-form');
     }
 
     /**

@@ -14,10 +14,9 @@ class CompanyRequestsController extends Controller
      */
     public function index()
     {
-        $companyrequests = CompanyRequests::all();
-        $companies = Company::with('user', 'country')->where('user_id', auth()->user()->id)->orderBy('created_at', 'desc')->paginate(5);
 
-        return view('frontend.dashboard.pages.action-request.company-requests', compact('companyrequests', 'companies'));
+
+        return view('frontend.dashboard.pages.action-request.company-requests');
 
     }
 
@@ -42,8 +41,7 @@ class CompanyRequestsController extends Controller
      */
     public function show(string $id)
     {
-        $companyrequest = CompanyRequests::findOrFail($id);
-        return view('frontend.dashboard.pages.action-request.company-request-form', compact('companyrequest'));
+        return view('frontend.dashboard.pages.action-request.company-request-form');
 
 
     }

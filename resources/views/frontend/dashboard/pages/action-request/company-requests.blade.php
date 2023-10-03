@@ -30,9 +30,7 @@
                             <div class="btn-group" role="group">
                                 <button id="btnGroupDrop1" class="btn btn-sm btn-outline-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">choose</button>
                                 <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                                @foreach ($companyrequests as $companyrequest)
-                                <a href="{{ route('company_requests.show', $companyrequest->id) }}" class="dropdown-item">{{ $companyrequest->name }}</a></option>
-                                @endforeach
+
 
                             </select>
                             @error('gender')

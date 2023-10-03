@@ -14,10 +14,9 @@ class SponsoreRequestsController extends Controller
      */
     public function index()
     {
-        $sponsorerequests = SponsoreRequests::all();
-        $sponsored = Sponsore::where('user_id', auth()->user()->id)->orderBy('id')->get();
 
-        return view('frontend.dashboard.pages.action-request.sponsore-requests', compact('sponsorerequests', 'sponsored'));
+
+        return view('frontend.dashboard.pages.action-request.sponsore-requests');
     }
 
     /**
@@ -41,8 +40,7 @@ class SponsoreRequestsController extends Controller
      */
     public function show(string $id)
     {
-        $sponsorerequest = SponsoreRequests::findOrFail($id);
-        return view('frontend.dashboard.pages.action-request.sponsore-request-form', compact('sponsorerequest'));
+        return view('frontend.dashboard.pages.action-request.sponsore-request-form');
     }
 
     /**
