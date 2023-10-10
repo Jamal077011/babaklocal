@@ -37,7 +37,7 @@
 
                 </ul>
 
-                <!-- Right Side Of Navbar -->
+                <!-- Right Side  Navbar -->
                 <ul class="navbar-nav ml-auto">
                     <!-- Authentication Links -->
                     @if (Auth::guard('web')->guest())
