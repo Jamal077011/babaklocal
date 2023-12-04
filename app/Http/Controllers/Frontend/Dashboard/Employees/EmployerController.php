@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Frontend\Dashboard\Employees;
 
+use App\Events\AddEmployee as EventsAddEmployee;
 use App\Http\Controllers\Controller;
 use App\Models\Admin;
 use App\Models\Dashboard\Company;
@@ -54,6 +55,16 @@ class EmployerController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'en_name' => 'required|string|max:255',
+            'ar_name' => 'required|string|max:255',
+            'email' => 'required|email|unique:employers,email',
+            'phone' => 'required|regex:/[0-9]+/',
+            'company_id' => 'required|exists:companies,id',
+            'gender' => 'required|in:male,female',
+            'nationality_id' => 'required|exists:nationalities,id',
+            'job_title_id' => 'required|exists:job_titles,id',
+         ]);
         // $user_id = auth()->user()->id;
   
         $employer = Employer::create($request->all());
@@ -62,9 +73,10 @@ class EmployerController extends Controller
        
          $admins=Admin::all();
          $user=User::find(Auth::user()->id);
+         event(new EventsAddEmployee($employer));
+
        
-        Notification::send($user,new addEmployee($employer));
-        Notification::send($admins,new addEmployee($employer));
+        //  Notification::send($admins,new addEmployee($employer));
       
 
       
@@ -114,7 +126,18 @@ class EmployerController extends Controller
      */
     public function update(Request $request, string $id)
     {
+
+        
         $employer = Employer::findOrFail($id);
+  
+        $request->validate([
+            'en_name' => 'required|string|max:255',
+            'ar_name' => 'required|string|max:255',
+            'email' => 'required|email|unique:employers,email,' . $employer->id,
+            'phone' => 'required|regex:/[0-9]+/',
+            
+         ]);
+
         $employer->update($request->all());
 
         return redirect()->route('employee.index')->with('success', 'employee updated successfully.');

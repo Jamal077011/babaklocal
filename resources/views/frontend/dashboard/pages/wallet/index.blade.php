@@ -18,11 +18,11 @@
     <div class="row">
         <div class="col-md-6 mt-4">
             <button class="btn disable " style="color:white; font-weight:700; background-color: #11cdef; border-radius:30px;">
-                {{__('Dashboard.Credit')}} | 3000$
+                {{__('Dashboard.Credit')}} | <?php echo Auth::user()->wallet . "$" ?>
             </button>
-            <a href="{{route('dashboard.wallet.add-to-wallet')}}" class="btn btn-primary mx-2" style="color:white; font-weight:700; border-radius:30px;">
+            {{-- <a href="{{route('dashboard.wallet.add-to-wallet')}}" class="btn btn-primary mx-2" style="color:white; font-weight:700; border-radius:30px;">
                 {{__('Dashboard.Add to Wallet')}}
-            </a>
+            </a> --}}
         </div>
         <div class="div col-md-6 mb-2 ">
             <form>
@@ -53,51 +53,31 @@
             <thead class="thead-light">
             <tr>
                 <th scope="col" class="sort" data-sort="name"></th>
-                <th scope="col" class="sort" data-sort="name">{{__('Dashboard.Movement type')}}</th>
-                <th scope="col" class="sort" data-sort="name">{{__('Dashboard.Movement statement')}}</th>
-                <th scope="col" class="sort" data-sort="name">{{__('Dashboard.The amount')}}</th>
-                <th scope="col" class="sort" data-sort="name">{{__('Dashboard.Paid up')}}</th>
-                <th scope="col" class="sort" data-sort="name">{{__('Dashboard.Date')}}</th>
-                <th scope="col" class="sort" data-sort="name">{{__('Dashboard.Debit balance')}}</th>
-                <th scope="col" class="sort" data-sort="name">{{__('Dashboard.Credit')}}</th>
-                <th scope="col" class="sort" data-sort="name">{{__('Dashboard.Net balance')}}</th>
-
+                <th scope="col" class="sort" data-sort="name">{{__('Request Name')}}</th>
+                 <th scope="col" class="sort" data-sort="name">{{__('Dashboard.The amount')}}</th>
+                 <th scope="col" class="sort" data-sort="name">{{__('Dashboard.Date')}}</th>
+   
             </tr>
             </thead>
             <tbody>
                 <tr>
                     <td></td>
                     <td>Fileone.pdf</td>
-                    <td>121290192990</td>
-                    <td>20/10/1990</td>
-                    <td>continue</td>
-                    <td>20/10/1990</td>
-                    <td>continue</td>
-                    <td>20/10/1990</td>
-                    <td>continue</td>
-                </tr>
+                     <td>75</td>
+                      <td>20/10/1990</td>
+                 </tr>
                 <tr>
                     <td></td>
                     <td>Fileone.pdf</td>
-                    <td>121290192990</td>
-                    <td>20/10/1990</td>
-                    <td>continue</td>
-                    <td>20/10/1990</td>
-                    <td>continue</td>
-                    <td>20/10/1990</td>
-                    <td>continue</td>
-                </tr>
+                      <td>34</td>
+                     <td>20/10/1990</td>
+                 </tr>
                 <tr>
                     <td></td>
                     <td>Fileone.pdf</td>
-                    <td>121290192990</td>
+                     <td>70</td>
                     <td>20/10/1990</td>
-                    <td>continue</td>
-                    <td>20/10/1990</td>
-                    <td>continue</td>
-                    <td>20/10/1990</td>
-                    <td>continue</td>
-                </tr>
+                 </tr>
             </tbody>
         </table>
     </div>

@@ -46,6 +46,17 @@ class SponsoreController extends Controller
      */
     public function store(Request $request)
     {   
+        $request->validate([
+            'ar_name' => 'required|string',
+            'en_name' => 'required|string',
+            'employer_id' => 'required|exists:employers,id',  
+            'email' => 'required|email|unique:sponsores,email', 
+            'phone' => 'required|numeric',
+            'gender' => 'required|in:male,female',
+            'nationality_id' => 'required|exists:nationalities,id',  
+            'job_title_id' => 'required|exists:job_titles,id',  
+            'relative_relation' => 'required|string',
+        ]);
         $sponsored = Sponsore::create($request->all());
 
         return redirect()->route('sponsore.index')->with('success', 'Sponsore created successfully.');
@@ -87,6 +98,16 @@ class SponsoreController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        $validatedData = $request->validate([
+            'ar_name' => 'required|string|max:255',
+            'en_name' => 'required|string|max:255',
+            'email' => 'required|email|unique:sponsores,email,' . $id,
+            'phone' => 'required|regex:/[0-9]+/',
+            'relative_relation' => 'required|string|max:255',
+         ], [
+            'email.unique' => 'The email address is already in use.',
+            'phone.regex' => 'Phone number should only contain numbers.',
+         ]);
         $sponsored = Sponsore::findOrFail($id);
         $sponsored->update($request->all());
 

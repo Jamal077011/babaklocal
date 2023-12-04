@@ -34,8 +34,8 @@
             <div class="card-body">
               <div class="row">
                 <div class="col">
-                  <h5 class="card-title text-uppercase text-muted mb-0">{{__('Dashboard.Total Orders')}}</h5>
-                  <span class="h2 font-weight-bold mb-0">2,356</span>
+                  <h5 class="card-title text-uppercase text-muted mb-0">{{__('In Your Wallet')}}</h5>
+                  <span class="h2 font-weight-bold mb-0"><?php echo Auth::user()->wallet  ?> </span>
                 </div>
                 <div class="col-auto">
                   <div class="icon icon-shape bg-gradient-green text-white rounded-circle shadow">
@@ -43,11 +43,7 @@
                   </div>
                 </div>
               </div>
-              <p class="mt-3 mb-0 text-sm">
-                <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
-                <span class="text-nowrap">{{__('Dashboard.Since last month')}}</span>
-                <br>
-              </p>
+              
             </div>
           </div>
         </div>

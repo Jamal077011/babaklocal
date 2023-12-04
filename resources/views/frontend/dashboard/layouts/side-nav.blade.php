@@ -77,6 +77,34 @@
                 <span class="nav-link-text">{{__('Dashboard.Action Requests')}}</span>
               </a>
             </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="{{ route('wallet') }}" role="button">
+                <i class="fa fa-message"></i>
+                <span class="nav-link-text">{{__('Wallet History')}}</span>
+              </a>
+            </li>
+            
+            <li class="nav-item">
+              <form action="/session" method="POST">
+                 <input type="hidden" name="_token" value="{{csrf_token()}}">
+                <input type='hidden' name="total" value="1000">
+                <input type='hidden' name="productname" value="Asus Vivobook 17 Laptop - Intel Core 10th">
+                <button class="btn btn-success" type="submit" id="checkout-live-button"><i class="fa fa-money"></i> Pay Now</button>
+                </form>
+            </li>
+
+           
+
+            {{-- <td colspan="5" style="text-align:right;">
+              <form action="/session" method="POST">
+              <a href="{{ url('/') }}" class="btn btn-danger"> <i class="fa fa-arrow-left"></i> Continue Shopping</a>
+              <input type="hidden" name="_token" value="{{csrf_token()}}">
+              <input type='hidden' name="total" value="1000">
+              <input type='hidden' name="productname" value="Asus Vivobook 17 Laptop - Intel Core 10th">
+              <button class="btn btn-success" type="submit" id="checkout-live-button"><i class="fa fa-money"></i> Checkout</button>
+              </form>
+          </td> --}}
             {{-- <li class="nav-item">
               <a class="nav-link " href="{{ route('dashboard.reports') }}" role="button">
                 <i class="fa fa-file"></i>

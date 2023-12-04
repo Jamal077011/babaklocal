@@ -43,6 +43,13 @@ class CompanyController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'user_id' => 'required|exists:users,id',
+            'mobile' => 'required|string|max:15',
+            'country_id' => 'required|exists:countries,id',
+        ]);
+
         $company = Company::create($request->all());
 
         return redirect()->route('companies.index')->with('success', 'Company created successfully.');
@@ -84,6 +91,13 @@ class CompanyController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'name' => 'sometimes|required|string|max:255',
+            'user_id' => 'sometimes|required|exists:users,id',
+            'mobile' => 'sometimes|required|string|max:15',
+            'country_id' => 'sometimes|required|exists:countries,id',
+        ]);
+        
         $company = Company::findOrFail($id);
         $company->update($request->all());
 
